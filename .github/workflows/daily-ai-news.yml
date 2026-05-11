@@ -1,0 +1,85 @@
+name: AI 圈日报自动发布
+
+on:
+  # 定时触发：每天早上 8:00 (北京时间) 运行
+  schedule:
+    - cron: '0 0 * * *'  # UTC 0:00 = 北京时间 8:00
+  
+  # 允许手动触发
+  workflow_dispatch:
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 检出代码
+        uses: actions/checkout@v4
+      
+      - name: 📦 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: 📦 安装依赖
+        run: npm install
+      
+      - name: 🔍 拉取 AI 内容数据
+        run: npm run fetch
+        env:
+          # 如果需要代理，取消注释并配置
+          # HTTP_PROXY: ${{ secrets.HTTP_PROXY }}
+          # HTTPS_PROXY: ${{ secrets.HTTPS_PROXY }}
+      
+      - name: 🤖 生成 AI 摘要
+        run: npm run summarize
+        env:
+          # OpenAI API（如果使用）
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          
+          # 或使用 GitHub Models（免费）
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AI_MODEL: gpt-4o-mini
+      
+      - name: 🎨 格式化为公众号格式
+        run: npm run format
+      
+      - name: 📤 发布到公众号
+        run: npm run publish
+        env:
+          WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
+          WECHAT_APPSECRET: ${{ secrets.WECHAT_APPSECRET }}
+      
+      - name: 📤 上传生成的文件
+        uses: actions/upload-artifact@v4
+        if: always()  # 即使前面的步骤失败也上传
+        with:
+          name: ai-news-daily-${{ github.run_id }}
+          path: output/
+          retention-days: 30
+      
+      - name: 📝 提交生成的文件到仓库
+        if: success()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add output/
+          git commit -m "📅 每日更新: $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 📢 创建 Issue 通知（如果失败）
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const date = new Date().toISOString().split('T')[0];
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `❌ AI 日报生成失败 - ${date}`,
+              body: `自动化流程执行失败，请检查 [Actions 日志](${{ github.server_url }}/${{ github.repo }}/actions/runs/${{ github.run_id }})`
+            });

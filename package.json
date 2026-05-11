@@ -1,0 +1,19 @@
+{
+  "name": "ai-news-daily-publisher",
+  "version": "1.0.0",
+  "description": "自动抓取AI内容并生成公众号日报",
+  "type": "module",
+  "scripts": {
+    "fetch": "node scripts/fetch-feed.js",
+    "summarize": "node scripts/generate-summary.js",
+    "format": "node scripts/format-for-wechat.js",
+    "publish": "node scripts/publish-to-wechat.js",
+    "daily": "npm run fetch && npm run summarize && npm run format && npm run publish"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "openai": "^4.0.0",
+    "js-yaml": "^4.1.0"
+  }
+}
