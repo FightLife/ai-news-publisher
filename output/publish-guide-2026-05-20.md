@@ -55,19 +55,20 @@
 
 ## 📰 重要博客文章
 
+
 ### 标题：Scaling Managed Agents: Decoupling the brain from the hands
 
-- **核心观点**：Anthropic 工程团队在其官方博客中探讨了如何构建有效的管理代理，并设计适用于长期工作的工具。文章强调，尽管现有的假设可能随着模型的改进而过时，但持续质疑这些假设是必要的。
+- **核心观点**：Anthropic 工程团队详细介绍了如何构建高效的管理代理，并设计用于长期工作的工具。文章强调需要定期质疑对 Claude 能力的假设，以便及时适应模型的进步。
 - [原文链接](https://www.anthropic.com/engineering/managed-agents)
 - **来源简介**：Anthropic 工程团队官方博客，Claude AI 开发者。
 
 ### 标题：New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels
 
-- **核心观点**：Claude Managed Agents 现在可以在用户控制的沙盒中操作，并连接到私有模型上下文协议（MCP）服务器。这一新功能增强了企业的安全性和运行时控制。
-- [原文链接](htt...
+- **核心观点**：Claude Managed Agents 现在可以在用户控制的沙盒中运行，并连接到私有的模型上下文协议（MCP）服务器。这一变化提升了企业在安全和运行时控制方面的能力。
+- [原文链接](https:...
 
 （完整内容请查看 output/latest-for-wechat.txt）
 
 ---
 
-生成时间：2026/5/20 18:23:57
+生成时间：2026/5/20 19:10:15
