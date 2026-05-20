@@ -99,7 +99,7 @@ async function fetchFeedData() {
   fs.writeFileSync(rawDataPath, JSON.stringify(results, null, 2), 'utf8');
   console.log(`💾 原始数据已保存: ${rawDataPath}`);
   
-  // 过滤出最近24小时的内容
+  // 过滤出最近72小时（3天）的内容
   const filteredData = filterRecentContent(results);
   const filteredDataPath = path.join(outputDir, `filtered-feed-${timestamp}.json`);
   fs.writeFileSync(filteredDataPath, JSON.stringify(filteredData, null, 2), 'utf8');
@@ -110,7 +110,7 @@ async function fetchFeedData() {
 
 function filterRecentContent(feedData) {
   const now = new Date();
-  const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+  const threeDaysAgo = new Date(now.getTime() - 72 * 60 * 60 * 1000);  // 改为 72 小时（3 天）
   
   const filtered = {
     blogs: [],
@@ -124,7 +124,7 @@ function filterRecentContent(feedData) {
       const itemDate = item.publishedAt || item.pubDate || item.date || item.published;
       if (!itemDate) return true; // 如果没有日期，保留
       try {
-        return new Date(itemDate) >= oneDayAgo;
+        return new Date(itemDate) >= threeDaysAgo;
       } catch (e) {
         return true;
       }
@@ -137,7 +137,7 @@ function filterRecentContent(feedData) {
       const itemDate = item.publishedAt || item.pubDate || item.date || item.published;
       if (!itemDate) return true;
       try {
-        return new Date(itemDate) >= oneDayAgo;
+        return new Date(itemDate) >= threeDaysAgo;
       } catch (e) {
         return true;
       }
@@ -150,14 +150,14 @@ function filterRecentContent(feedData) {
       const itemDate = item.createdAt || item.date || item.timestamp;
       if (!itemDate) return true;
       try {
-        return new Date(itemDate) >= oneDayAgo;
+        return new Date(itemDate) >= threeDaysAgo;
       } catch (e) {
         return true;
       }
     });
   }
   
-  console.log('\n📊 过滤统计（最近24小时）:');
+  console.log('\n📊 过滤统计（最近72小时/3天）:');
   console.log(`  - 博客: ${filtered.blogs.length} 篇`);
   console.log(`  - 播客: ${filtered.podcasts.length} 期`);
   console.log(`  - Twitter: ${filtered.twitter.length} 条`);
