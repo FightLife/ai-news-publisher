@@ -62,16 +62,19 @@
 - 来源：Anthropic Engineering（Anthropic 工程团队官方博客，Claude AI 开发者）
 - 链接：https://www.anthropic.com/engineering/managed-agents
 
-## 🐦 Twitter 动态
+### 2. New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels
 
 
-### 1. @karpathy（Andrej Karpathy，前 OpenAI 创始成员，特斯拉前 AI 总监）
+- 来源：Claude Blog（Claude AI 官方博客，Anthropic 公司）
+- 链接：https://claude.com/blog/claude-managed-agents-updates
+
+## 🎙️ 最新播客
 
 
-Personal update: I've joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative. I am very excited to join the team here and get back to R&amp;D. I rem...
+### 1. Rebuilding IT From the Ground Up for the AI Age: Serval's Jake Stau...
 
 （完整内容请查看 output/latest-for-wechat.txt）
 
 ---
 
-生成时间：2026/5/20 17:02:08
+生成时间：2026/5/20 17:37:57

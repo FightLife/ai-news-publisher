@@ -7,6 +7,18 @@
 - 来源：Anthropic Engineering（Anthropic 工程团队官方博客，Claude AI 开发者）
 - 链接：https://www.anthropic.com/engineering/managed-agents
 
+### 2. New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels
+
+- 来源：Claude Blog（Claude AI 官方博客，Anthropic 公司）
+- 链接：https://claude.com/blog/claude-managed-agents-updates
+
+## 🎙️ 最新播客
+
+### 1. Rebuilding IT From the Ground Up for the AI Age: Serval's Jake Stauch
+
+- 频道：Training Data
+- 链接：https://www.youtube.com/watch?v=j7ypvRUFY7M
+
 ## 🐦 Twitter 动态
 
 ### 1. @karpathy（Andrej Karpathy，前 OpenAI 创始成员，特斯拉前 AI 总监）
