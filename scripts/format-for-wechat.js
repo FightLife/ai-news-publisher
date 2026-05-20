@@ -80,7 +80,7 @@ function convertMarkdownToWechatHTML(markdown) {
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.8;
+      line-height:1.8;
       color: #333;
       max-width: 680px;
       margin: 0 auto;

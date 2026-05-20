@@ -26,6 +26,9 @@ async function generateSummary() {
   
   const feedData = JSON.parse(fs.readFileSync(feedDataPath, 'utf8'));
   
+  // 压缩数据（避免超过 API 限制）
+  const compressedData = compressFeedData(feedData);
+  
   // 初始化 OpenAI 客户端（支持 GitHub Models）
   const apiKey = process.env.OPENAI_API_KEY || process.env.GITHUB_TOKEN;
   const baseURL = process.env.OPENAI_BASE_URL || 'https://models.inference.ai.azure.com';
@@ -44,7 +47,7 @@ async function generateSummary() {
   const model = process.env.AI_MODEL || 'gpt-4o-mini';
   
   // 生成摘要
-  const summary = await generateContentSummary(client, model, feedData);
+  const summary = await generateContentSummary(client, model, compressedData);
   
   // 保存摘要
   const timestamp = new Date().toISOString().split('T')[0];
@@ -58,6 +61,29 @@ async function generateSummary() {
   console.log(`📝 最新摘要已更新: ${latestSummaryPath}`);
   
   return summary;
+}
+
+// 压缩 feed 数据（避免超过 API 限制）
+function compressFeedData(feedData) {
+  const compressed = JSON.parse(JSON.stringify(feedData)); // 深拷贝
+  
+  // 截断博客内容的 content 字段
+  if (Array.isArray(compressed.blogs)) {
+    compressed.blogs = compressed.blogs.map(blog => ({
+      ...blog,
+      content: blog.content ? blog.content.substring(0, 800) : ''
+    }));
+  }
+  
+  // 截断播客的 transcript 字段
+  if (Array.isArray(compressed.podcasts)) {
+    compressed.podcasts = compressed.podcasts.map(podcast => ({
+      ...podcast,
+      transcript: podcast.transcript ? podcast.transcript.substring(0, 1200) : ''
+    }));
+  }
+  
+  return compressed;
 }
 
 async function generateContentSummary(client, model, feedData) {
@@ -128,8 +154,12 @@ function generateBasicSummary(feedData, date) {
     summary += '## 📰 官方博客\n\n';
     feedData.blogs.slice(0, 5).forEach((blog, index) => {
       summary += `### ${index + 1}. ${blog.title || '无标题'}\n\n`;
-      summary += `- 来源：${blog.source || '未知'}\n`;
-      summary += `- 链接：${blog.link || blog.url || '#'}\n\n`;
+      summary += `- 来源：${blog.name || blog.source || '未知'}\n`;
+      summary += `- 链接：${blog.url || '#'}\n`;
+      if (blog.description) {
+        summary += `- 简介：${blog.description.substring(0, 200)}...\n`;
+      }
+      summary += '\n';
     });
   }
   
@@ -138,8 +168,8 @@ function generateBasicSummary(feedData, date) {
     summary += '## 🎙️ 最新播客\n\n';
     feedData.podcasts.slice(0, 3).forEach((podcast, index) => {
       summary += `### ${index + 1}. ${podcast.title || '无标题'}\n\n`;
-      summary += `- 频道：${podcast.channel || '未知'}\n`;
-      summary += `- 链接：${podcast.link || podcast.url || '#'}\n\n`;
+      summary += `- 频道：${podcast.name || '未知'}\n`;
+      summary += `- 链接：${podcast.url || '#'}\n\n`;
     });
   }
   
@@ -147,7 +177,8 @@ function generateBasicSummary(feedData, date) {
   if (feedData.twitter && feedData.twitter.length > 0) {
     summary += '## 🐦 Twitter 动态\n\n';
     feedData.twitter.slice(0, 10).forEach((tweet, index) => {
-      summary += `### ${index + 1}. @${tweet.username || 'unknown'}\n\n`;
+      const handle = tweet.handle || 'unknown';
+      summary += `### ${index + 1}. @${handle}\n\n`;
       summary += `${tweet.text || tweet.content || '无内容'}\n\n`;
       summary += `- 链接：${tweet.url || '#'}\n\n`;
     });

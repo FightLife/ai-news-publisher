@@ -42,8 +42,23 @@ async function fetchFeedData() {
         timeout: 30000
       });
       
-      results[key] = response.data;
-      console.log(`✅ ${key} 拉取成功，获取到 ${Array.isArray(response.data) ? response.data.length : 'N/A'} 条数据\n`);
+      // 正确处理 follow-builders 的嵌套数据结构
+      // 实际结构: { generatedAt, blogs: [...], stats: {...} }
+      if (key === 'blogs' && response.data.blogs) {
+        results[key] = response.data.blogs;
+        console.log(`  ✓ 提取了 ${response.data.blogs.length} 篇博客`);
+      } else if (key === 'podcasts' && response.data.podcasts) {
+        results[key] = response.data.podcasts;
+        console.log(`  ✓ 提取了 ${response.data.podcasts.length} 期播客`);
+      } else if (key === 'twitter' && response.data.x) {
+        results[key] = response.data.x;
+        console.log(`  ✓ 提取了 ${response.data.x.length} 条推文`);
+      } else {
+        // 如果结构变化，降级为直接使用
+        results[key] = Array.isArray(response.data) ? response.data : [];
+      }
+      
+      console.log(`✅ ${key} 拉取成功\n`);
       
     } catch (error) {
       console.error(`❌ ${key} 拉取失败:`, error.message);
@@ -75,30 +90,42 @@ function filterRecentContent(feedData) {
     twitter: []
   };
   
-  // 过滤博客（如果有日期字段）
+  // 过滤博客（日期字段：publishedAt）
   if (Array.isArray(feedData.blogs)) {
     filtered.blogs = feedData.blogs.filter(item => {
-      const itemDate = item.pubDate || item.date || item.published;
+      const itemDate = item.publishedAt || item.pubDate || item.date || item.published;
       if (!itemDate) return true; // 如果没有日期，保留
-      return new Date(itemDate) >= oneDayAgo;
+      try {
+        return new Date(itemDate) >= oneDayAgo;
+      } catch (e) {
+        return true;
+      }
     });
   }
   
-  // 过滤播客
+  // 过滤播客（日期字段：publishedAt）
   if (Array.isArray(feedData.podcasts)) {
     filtered.podcasts = feedData.podcasts.filter(item => {
-      const itemDate = item.pubDate || item.date || item.published;
+      const itemDate = item.publishedAt || item.pubDate || item.date || item.published;
       if (!itemDate) return true;
-      return new Date(itemDate) >= oneDayAgo;
+      try {
+        return new Date(itemDate) >= oneDayAgo;
+      } catch (e) {
+        return true;
+      }
     });
   }
   
-  // 过滤Twitter
+  // 过滤Twitter（日期字段：createdAt）
   if (Array.isArray(feedData.twitter)) {
     filtered.twitter = feedData.twitter.filter(item => {
-      const itemDate = item.created_at || item.date || item.timestamp;
+      const itemDate = item.createdAt || item.date || item.timestamp;
       if (!itemDate) return true;
-      return new Date(itemDate) >= oneDayAgo;
+      try {
+        return new Date(itemDate) >= oneDayAgo;
+      } catch (e) {
+        return true;
+      }
     });
   }
   
