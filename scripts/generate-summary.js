@@ -82,22 +82,46 @@ async function generateSummary() {
 
 // 压缩 feed 数据（避免超过 API 限制）
 function compressFeedData(feedData) {
-  const compressed = JSON.parse(JSON.stringify(feedData)); // 深拷贝
+  const compressed = {};
   
-  // 截断博客内容的 content 字段
-  if (Array.isArray(compressed.blogs)) {
-    compressed.blogs = compressed.blogs.map(blog => ({
-      ...blog,
-      content: blog.content ? blog.content.substring(0, 800) : ''
+  // 博客：最多3篇，只保留必要字段，内容截断到400字
+  if (Array.isArray(feedData.blogs) && feedData.blogs.length > 0) {
+    compressed.blogs = feedData.blogs.slice(0, 3).map(blog => ({
+      title: blog.title || '',
+      name: blog.name || '',
+      url: blog.url || '',
+      profile: blog.profile || '',
+      content: blog.content ? blog.content.substring(0, 400) : ''
     }));
+  } else {
+    compressed.blogs = [];
   }
   
-  // 截断播客的 transcript 字段
-  if (Array.isArray(compressed.podcasts)) {
-    compressed.podcasts = compressed.podcasts.map(podcast => ({
-      ...podcast,
-      transcript: podcast.transcript ? podcast.transcript.substring(0, 1200) : ''
+  // 播客：最多1期，只保留必要字段，transcript截断到600字
+  if (Array.isArray(feedData.podcasts) && feedData.podcasts.length > 0) {
+    compressed.podcasts = feedData.podcasts.slice(0, 1).map(podcast => ({
+      title: podcast.title || '',
+      name: podcast.name || '',
+      url: podcast.url || '',
+      profile: podcast.profile || '',
+      transcript: podcast.transcript ? podcast.transcript.substring(0, 600) : ''
     }));
+  } else {
+    compressed.podcasts = [];
+  }
+  
+  // Twitter：最多8条，只保留必要字段，text截断到200字
+  if (Array.isArray(feedData.twitter) && feedData.twitter.length > 0) {
+    compressed.twitter = feedData.twitter.slice(0, 8).map(tweet => ({
+      handle: tweet.handle || '',
+      name: tweet.name || '',
+      profile: tweet.profile || '',
+      text: tweet.text ? tweet.text.substring(0, 200) : '',
+      url: tweet.url || '',
+      createdAt: tweet.createdAt || ''
+    }));
+  } else {
+    compressed.twitter = [];
   }
   
   return compressed;
