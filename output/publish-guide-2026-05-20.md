@@ -62,29 +62,16 @@
 - 来源：Anthropic Engineering（Anthropic 工程团队官方博客，Claude AI 开发者）
 - 链接：https://www.anthropic.com/engineering/managed-agents
 
-## 🎙️ 最新播客
-
-
-### 1. Rebuilding IT From the Ground Up for the AI Age: Serval's Jake Stauch
-
-
-- 频道：Training Data
-- 链接：https://www.youtube.com/watch?v=j7ypvRUFY7M
-
 ## 🐦 Twitter 动态
 
 
 ### 1. @karpathy（Andrej Karpathy，前 OpenAI 创始成员，特斯拉前 AI 总监）
 
 
-无内容
-
-- 链接：#
-
-### 2. @swyx（Swy...
+Personal update: I've joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative. I am very excited to join the team here and get back to R&amp;D. I rem...
 
 （完整内容请查看 output/latest-for-wechat.txt）
 
 ---
 
-生成时间：2026/5/20 16:56:51
+生成时间：2026/5/20 17:02:08
