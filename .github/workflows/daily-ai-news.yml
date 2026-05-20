@@ -8,6 +8,11 @@ on:
   # 允许手动触发
   workflow_dispatch:
 
+permissions:
+  contents: write
+  issues: write
+  actions: read
+
 jobs:
   generate-and-publish:
     runs-on: ubuntu-latest
