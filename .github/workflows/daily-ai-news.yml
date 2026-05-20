@@ -27,10 +27,6 @@ jobs:
       
       - name: 🔍 拉取 AI 内容数据
         run: npm run fetch
-        env:
-          # 如果需要代理，取消注释并配置
-          # HTTP_PROXY: ${{ secrets.HTTP_PROXY }}
-          # HTTPS_PROXY: ${{ secrets.HTTPS_PROXY }}
       
       - name: 🤖 生成 AI 摘要
         run: npm run summarize
