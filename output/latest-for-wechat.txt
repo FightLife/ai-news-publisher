@@ -1,136 +1,77 @@
 # AI 圈日报 - 2026年5月20日星期三
 
 
-## 📰 官方博客
+## 📰 重要博客文章
 
+### 标题：Scaling Managed Agents: Decoupling the brain from the hands
 
-### 1. Scaling Managed Agents: Decoupling the brain from the hands
+- **核心观点**：Anthropic 工程团队在其官方博客中探讨了如何构建有效的管理代理，并设计适用于长期工作的工具。文章强调，尽管现有的假设可能随着模型的改进而过时，但持续质疑这些假设是必要的。
+- [原文链接](https://www.anthropic.com/engineering/managed-agents)
+- **来源简介**：Anthropic 工程团队官方博客，Claude AI 开发者。
 
+### 标题：New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels
 
-- 来源：Anthropic Engineering（Anthropic 工程团队官方博客，Claude AI 开发者）
-- 链接：https://www.anthropic.com/engineering/managed-agents
+- **核心观点**：Claude Managed Agents 现在可以在用户控制的沙盒中操作，并连接到私有模型上下文协议（MCP）服务器。这一新功能增强了企业的安全性和运行时控制。
+- [原文链接](https://claude.com/blog/claude-managed-agents-updates)
+- **来源简介**：Claude AI 官方博客，Anthropic 公司。
 
-### 2. New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels
+## 🎙️ 最新播客节选
 
+### 标题：Rebuilding IT From the Ground Up for the AI Age: Serval's Jake Stauch
 
-- 来源：Claude Blog（Claude AI 官方博客，Anthropic 公司）
-- 链接：https://claude.com/blog/claude-managed-agents-updates
+- **核心观点**：在最新一期的播客中，Serval 的 Jake Stauch 讨论了人工智能时代IT工作的现实与理想的差距，并强调了工具在缩小这一差距中的重要性。
+- [原文链接](https://www.youtube.com/watch?v=j7ypvRUFY7M)
+- **来源简介**：Training Data 播客。
 
-## 🎙️ 最新播客
+## 🐦 Twitter 热门动态
 
+### 动态来自：Andrej Karpathy
 
-### 1. Rebuilding IT From the Ground Up for the AI Age: Serval's Jake Stauch
+- **内容**：个人更新：我已加入 Anthropic。我认为，未来几年在大语言模型的前沿将特别具有形成性。我非常期待再次参与研发工作。
+- [原文链接](https://x.com/karpathy/status/2056753169888334312)
+- **来源简介**：前 OpenAI 创始成员，特斯拉前 AI 总监。
 
+### 动态来自：Swyx
 
-- 频道：Training Data
-- 链接：https://www.youtube.com/watch?v=j7ypvRUFY7M
+- **内容**：哎呀，背景信息被冲浪了。
+- [原文链接](https://x.com/swyx/status/2056999228405346812)
+- **来源简介**：AI Engineer World's Fair 创始人，AI 工程师社区领袖。
 
-## 🐦 Twitter 动态
+### 动态来自：Swyx
 
+- **内容**：AI 软件开发生命周期（SDLC）包含四个部分：1. 设置大约 50 个测试，并提供添加更多测试的说明，包括“每当你进行浏览器端到端测试时，使用计算机视觉进行视觉检查”。
+- [原文链接](https://x.com/swyx/status/2056877529991205072)
+- **来源简介**：AI Engineer World's Fair 创始人，AI 工程师社区领袖。
 
-### 1. @karpathy（Andrej Karpathy，前 OpenAI 创始成员，特斯拉前 AI 总监）
+### 动态来自：Swyx
 
+- **内容**：RSI（重复性劳损）来了，天哪。
+- [原文链接](https://x.com/swyx/status/2056790544731484358)
+- **来源简介**：AI Engineer World's Fair 创始人，AI 工程师社区领袖。
 
-Personal update: I've joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative. I am very excited to join the team here and get back to R&amp;D. I remain deeply passionate about education and plan to resume my work on it in time.
+### 动态来自：Josh Woodward
 
-- 链接：https://x.com/karpathy/status/2056753169888334312
+- **内容**：介绍 Gemini Spark！我们的 24/7 个人 AI 代理，旨在主动管理任务，帮助您导航数字生活，完全在您的指导下。
+- [原文链接](https://x.com/joshwoodward/status/2056873495116845485)
+- **来源简介**：Google Labs 产品总监。
 
-### 2. @swyx（Swyx，AI Engineer World's Fair 创始人，AI 工程师社区领袖）
+### 动态来自：Josh Woodward
 
+- **内容**：很高兴你喜欢它！
+- [原文链接](https://x.com/joshwoodward/status/2056838729667649571)
+- **来源简介**：Google Labs 产品总监。
 
-oh no contextual got windsurfed https://t.co/Q4dM8h71bE
+### 动态来自：Josh Woodward
 
-- 链接：https://x.com/swyx/status/2056999228405346812
+- **内容**：很高兴你喜欢它！我们会推出更多口音！:)
+- [原文链接](https://x.com/joshwoodward/status/2056830338110996909)
+- **来源简介**：Google Labs 产品总监。
 
-### 3. @swyx（Swyx，AI Engineer World's Fair 创始人，AI 工程师社区领袖）
+### 动态来自：Peter Yang
 
-
-there's 4 parts to this AI SDLC
-
-1. have ~50 tests in place, with instructions to add more, including "make a memory that whenever you do browser e2e tests, use computer vision to visually spot check design and ux issues as well on mobile/desktop/ipad/ultrawide resolutions"
-
-2. "/plan break up & edit hot paths so you isolate files for easier editing and reading. add proper logging and error boundaries/handling while you do it.  what else should we refactor for maintainability/performance/ai editing?"
-
-3. (with plan) "you can break backward compatibility.  first map out all the remaining work, then proceed on this next slice, do not stop until all work is done, periodically stop to commit, deploy and test but do not stop until all work is done"
-
-4. [periodically spot check deployed functionality and /steer bugs as it goes along]
-
-- 链接：https://x.com/swyx/status/2056877529991205072
-
-### 4. @swyx（Swyx，AI Engineer World's Fair 创始人，AI 工程师社区领袖）
-
-
-rsi is here. jesus
-
-https://t.co/XYlFDZLFWL
-
-- 链接：https://x.com/swyx/status/2056790544731484358
-
-### 5. @joshwoodward（Josh Woodward，Google Labs 产品总监）
-
-
-Introducing Gemini Spark!
-
-Our 24/7 personal AI agent designed to proactively manage tasks and help you navigate your digital life, all under your direction.
-
-Coming to trusted testers this week, and as a Beta for US Google AI Ultra subscribers next week! https://t.co/EUjmR4HYdl
-
-- 链接：https://x.com/joshwoodward/status/2056873495116845485
-
-### 6. @joshwoodward（Josh Woodward，Google Labs 产品总监）
-
-
-Glad you like it! https://t.co/pg2WVWj44I
-
-- 链接：https://x.com/joshwoodward/status/2056838729667649571
-
-### 7. @joshwoodward（Josh Woodward，Google Labs 产品总监）
-
-
-Glad you like it! We have more accents coming! :) https://t.co/6s7rZEezZO
-
-- 链接：https://x.com/joshwoodward/status/2056830338110996909
-
-### 8. @petergyang（Peter Yang，Roblox 首席产品官）
-
-
-Met a lot of great folks at Google IO @gregisenberg @alliekmiller @AlexFinn 
-
-One thing I think about often living both the PM and creator life is I don’t want to be just an “influencer” wielding a selfie cam.
-
-I want to be a builder and share my learnings (and mistakes) with you all.
-
-Cannot let the builder muscle atrophy.
-
-- 链接：https://x.com/petergyang/status/2056953057066598805
-
-### 9. @petergyang（Peter Yang，Roblox 首席产品官）
-
-
-The man just speaks to me with everything he says:
-
-“Just try a lot and build to learn”
-
-“You need to do 3-4 iterations to find what takes off and what doesn’t.”
-
-“We only have a 90 day roadmap and maybe if we are lucky it’s 120 days.”
-
-“I don’t know if we’ll ever go back to 1 year roadmaps. I haven’t been working on one of those in 5 years.”
-
-- 链接：https://x.com/petergyang/status/2056927645657641378
-
-### 10. @petergyang（Peter Yang，Roblox 首席产品官）
-
-
-Talking to the Head of Gemini app in 5 min at Google, what should I ask him?
-
-- 链接：https://x.com/petergyang/status/2056910185650856446
-
-
----
-
-
-*本日报由 AI 自动生成，内容来源于 follow-builders 项目*
+- **内容**：在 Google IO 见到了很多优秀的人。
+- [原文链接](https://x.com/petergyang/status/2056953057066598805)
+- **来源简介**：Roblox 首席产品官。
 
 ---
 
