@@ -7,7 +7,9 @@
 - 🔄 **全自动运行**：通过 GitHub Actions 每日定时运行
 - 📊 **多源聚合**：自动抓取博客、播客、Twitter 等 AI 圈内容
 - 🤖 **AI 智能摘要**：使用 GPT-4o-mini 生成专业中文摘要
+- 🏷️ **来源简介**：自动为数据源添加中文简介（如"OpenAI CEO，ChatGPT 创始人"）
 - 🎨 **公众号适配**：自动格式化为公众号友好的排版
+- 📧 **邮件推送**：支持将生成的日报自动发送到邮箱（推荐）
 - 📱 **灵活发布**：支持自动发布（需 API）或手动复制粘贴
 - ☁️ **云端运行**：无需本地环境，完全在 GitHub 云端运行
 
@@ -39,7 +41,38 @@ npm install
 - `OPENAI_API_KEY`：你的 OpenAI API Key
 - `OPENAI_BASE_URL`（可选）：自定义 API 端点
 
-### 4. （可选）配置微信公众号 API
+### 4. （可选）配置邮件推送
+
+如果你想让系统自动将生成的日报发送到邮箱，需要配置邮件服务：
+
+#### 方式一：使用 QQ 邮箱（推荐，简单）
+
+1. **开启 QQ 邮箱 SMTP 服务并获取授权码**
+   - 登录 QQ 邮箱网页版
+   - 进入 `设置` → `账户`
+   - 找到 `POP3/IMAP/SMTP/Exchange/CardDAV/日历服务`
+   - 开启 `IMAP/SMTP服务` 或 `POP3/SMTP服务`
+   - 按提示用手机发送短信验证
+   - 验证成功后会显示**授权码**（不是邮箱密码！）
+
+2. **在 GitHub 仓库中添加 secrets**
+   - 进入仓库 `Settings` → `Secrets and variables` → `Actions`
+   - 添加 `MAIL_USERNAME`：你的 QQ 邮箱地址（如 `504029540@qq.com`）
+   - 添加 `MAIL_PASSWORD`：上一步获取的**授权码**（不是邮箱密码）
+
+3. **修改工作流文件**（已完成）
+   - 邮件推送步骤已添加到 `.github/workflows/daily-ai-news.yml`
+   - 接收邮箱已设置为 `504029540@qq.com`
+
+#### 方式二：使用 Gmail 或其他邮箱
+
+- Gmail：需要[应用专用密码](https://myaccount.google.com/apppasswords)
+- 163 邮箱：SMTP 服务器为 `smtp.163.com`
+- 其他邮箱：查询对应 SMTP 服务器地址和端口
+
+> **注意**：如果不配置邮件推送，也可以手动从 GitHub Actions 的 Artifact 下载生成的文件。
+
+### 5. （可选）配置微信公众号 API
 
 如果你想启用自动发布到公众号，需要添加：
 
@@ -106,6 +139,41 @@ npm run publish
 # 或者一步完成
 npm run daily
 ```
+
+## 🏷️ 数据源简介功能
+
+从 v2.0 开始，系统支持为数据源添加中文简介，让读者了解内容来源的背景信息。
+
+### 功能说明
+
+- 在生成的日报中，会自动在来源名称后添加中文简介
+- 例如：`Sam Altman（OpenAI CEO，ChatGPT 创始人）`
+- 简介信息存储在 `source-profiles.json` 文件中
+
+### 自定义简介
+
+编辑 `source-profiles.json` 文件，为每个数据源添加或修改 `profile` 字段：
+
+```json
+{
+  "twitter": [
+    {
+      "handle": "sama",
+      "name": "Sam Altman",
+      "profile": "OpenAI CEO，ChatGPT 创始人"
+    }
+  ]
+}
+```
+
+支持的数据源类型：
+- `blogs`：博客来源
+- `podcasts`：播客来源
+- `twitter`：Twitter 账号
+
+### 添加新数据源
+
+如果使用自定义的 follow-builders 配置，可以在 `source-profiles.json` 中添加新的数据源简介，系统会自动匹配。
 
 ## 📊 数据源说明
 

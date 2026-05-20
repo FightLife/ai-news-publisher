@@ -1,0 +1,123 @@
+{
+  "blogs": [
+    {
+      "name": "Anthropic Engineering",
+      "url": "https://www.anthropic.com/engineering",
+      "profile": "Anthropic 工程团队官方博客，Claude AI 开发者"
+    },
+    {
+      "name": "Claude Blog",
+      "url": "https://claude.com/blog",
+      "profile": "Claude AI 官方博客，Anthropic 公司"
+    },
+    {
+      "name": "OpenAI Blog",
+      "url": "https://openai.com/blog",
+      "profile": "OpenAI 官方博客，GPT/ChatGPT 开发团队"
+    },
+    {
+      "name": "Google AI Blog",
+      "url": "https://ai.googleblog.com",
+      "profile": "Google AI 研究团队官方博客"
+    },
+    {
+      "name": "DeepMind Blog",
+      "url": "https://deepmind.google/blog",
+      "profile": "Google DeepMind 官方博客，AlphaGo/AlphaFold 开发团队"
+    }
+  ],
+  "podcasts": [
+    {
+      "name": "Lex Fridman Podcast",
+      "host": "Lex Fridman",
+      "profile": "MIT 研究员，人工智能与前沿科技对话节目"
+    },
+    {
+      "name": "The AI Podcast",
+      "host": "NVIDIA",
+      "profile": "NVIDIA 官方播客，AI 技术与应用深度讨论"
+    }
+  ],
+  "twitter": [
+    {
+      "handle": "sama",
+      "name": "Sam Altman",
+      "profile": "OpenAI CEO，ChatGPT 创始人"
+    },
+    {
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "profile": "前 OpenAI 创始成员，特斯拉前 AI 总监"
+    },
+    {
+      "handle": "swyx",
+      "name": "Swyx",
+      "profile": "AI Engineer World's Fair 创始人，AI 工程师社区领袖"
+    },
+    {
+      "handle": "joshwoodward",
+      "name": "Josh Woodward",
+      "profile": "Google Labs 产品总监"
+    },
+    {
+      "handle": "petergyang",
+      "name": "Peter Yang",
+      "profile": "Roblox 首席产品官"
+    },
+    {
+      "handle": "thenanyu",
+      "name": "Nan Yu",
+      "profile": "AI 产品设计师"
+    },
+    {
+      "handle": "GoogleLabs",
+      "name": "Google Labs",
+      "profile": "Google 实验性产品团队"
+    },
+    {
+      "handle": "rauchg",
+      "name": "Guillermo Rauch",
+      "profile": "Vercel CEO，Next.js 创作者"
+    },
+    {
+      "handle": "levie",
+      "name": "Aaron Levie",
+      "profile": "Box CEO，企业云存储与 AI 先驱"
+    },
+    {
+      "handle": "ryolu_",
+      "name": "Ryo Lu",
+      "profile": "AI 研究者与开发者"
+    },
+    {
+      "handle": "garrytan",
+      "name": "Garry Tan",
+      "profile": "Y Combinator CEO，前 OpenAI 早期投资者"
+    },
+    {
+      "handle": "mattturck",
+      "name": "Matt Turck",
+      "profile": "FirstMark Capital 合伙人，AI 与数据领域投资人"
+    },
+    {
+      "handle": "nikunj",
+      "name": "Nikunj Kothari",
+      "profile": "Google 产品管理总监"
+    },
+    {
+      "handle": "danshipper",
+      "name": "Dan Shipper",
+      "profile": "Every.to CEO，AI 工具深度使用者"
+    },
+    {
+      "handle": "adityaag",
+      "name": "Aditya Agarwal",
+      "profile": "前 Facebook VP Engineering，Databricks 董事会成员"
+    },
+    {
+      "handle": "claudeai",
+      "name": "Claude",
+      "profile": "Anthropic Claude AI 官方账号"
+    }
+  ]
+}

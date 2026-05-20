@@ -61,6 +61,20 @@ jobs:
           path: output/
           retention-days: 30
       
+      - name: 📧 发送邮件通知
+        uses: dawidd6/action-send-mail@v3
+        if: success()
+        with:
+          server_address: smtp.qq.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: AI 圈日报 - ${{ github.run_id }}
+          html_body: file://output/latest-for-wechat.txt
+          to: 504029540@qq.com
+          from: AI 圈日报自动推送
+          convert_markdown: true
+      
       - name: 📝 提交生成的文件到仓库
         if: success()
         run: |
