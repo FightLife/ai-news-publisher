@@ -21,6 +21,33 @@ const FEED_SOURCES = {
   twitter: 'https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-x.json'
 };
 
+// 扁平化 Twitter 数据（展开嵌套的 tweets 数组）
+function flattenTwitterData(twitterAccounts) {
+  const flattened = [];
+  
+  twitterAccounts.forEach(account => {
+    if (Array.isArray(account.tweets)) {
+      account.tweets.forEach(tweet => {
+        flattened.push({
+          handle: account.handle,
+          name: account.name,
+          bio: account.bio || '',
+          text: tweet.text || '',
+          createdAt: tweet.createdAt || '',
+          url: tweet.url || '',
+          likes: tweet.likes || 0,
+          retweets: tweet.retweets || 0,
+          replies: tweet.replies || 0,
+          isQuote: tweet.isQuote || false,
+          quotedTweetId: tweet.quotedTweetId || null
+        });
+      });
+    }
+  });
+  
+  return flattened;
+}
+
 async function fetchFeedData() {
   console.log('🚀 开始拉取 AI 内容feed数据...\n');
   
@@ -51,8 +78,9 @@ async function fetchFeedData() {
         results[key] = response.data.podcasts;
         console.log(`  ✓ 提取了 ${response.data.podcasts.length} 期播客`);
       } else if (key === 'twitter' && response.data.x) {
-        results[key] = response.data.x;
-        console.log(`  ✓ 提取了 ${response.data.x.length} 条推文`);
+        // 扁平化 Twitter 数据（展开嵌套的 tweets 数组）
+        results[key] = flattenTwitterData(response.data.x);
+        console.log(`  ✓ 提取了 ${results[key].length} 条推文`);
       } else {
         // 如果结构变化，降级为直接使用
         results[key] = Array.isArray(response.data) ? response.data : [];
