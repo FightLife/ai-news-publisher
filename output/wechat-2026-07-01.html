@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AI 圈日报</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height:1.8;
+      color: #333;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      color: #1a1a1a;
+      border-bottom: 3px solid #07C160;
+      padding-bottom: 10px;
+    }
+    h2 {
+      font-size: 20px;
+      color: #07C160;
+      margin-top: 30px;
+    }
+    h3 {
+      font-size: 18px;
+      color: #333;
+      margin-top: 20px;
+    }
+    p {
+      margin: 15px 0;
+    }
+    ul {
+      padding-left: 25px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    a {
+      color: #07C160;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 30px 0;
+    }
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #07C160;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+<p><h1>AI 圈日报 - 2026年7月1日星期三</h1></p><p><h2>📰 重要博客文章</h2></p><p><h3>关于最近 Claude Code 质量报告的更新</h3>
+在过去一个月，我们关注到一些用户反馈 Claude 的回复质量下降。经过调查，我们发现这些问题源于三个独立的变更，分别影响了 Claude Code、Claude Agent SDK 和 Claude Cowork，但 API 并未受到影响。所有三个问题已于4月20日（v2.1.116）解决。本文详细解释了我们发现的问题、修复的内容以及未来的改进计划。
+<a href="https://www.anthropic.com/engineering/april-23-postmortem">阅读原文</a>  
+来源：Anthropic 工程团队官方博客，Claude AI 开发者</p><p><h3>扩展管理代理：将大脑与双手解耦</h3>
+通过我们的文档开始使用 Claude 管理代理。工程博客上一个持续的话题是如何构建有效的代理并设计适用于长时间工作的工具。贯穿这项工作的一个共同点是，工具编码了对 Claude 自身无法完成的假设。然而，随着模型的改进，这些假设需要经常被质疑。
+<a href="https://www.anthropic.com/engineering/managed-agents">阅读原文</a>  
+来源：Anthropic 工程团队官方博客，Claude AI 开发者</p><p><h2>🎙️ 最新播客节选</h2></p><p>（目前没有相关播客内容）</p><p><h2>🐦 Twitter 热门动态</h2></p><p><h3>Swyx 的推文</h3>
+Swyx 提到，当同事不尊重扩展法则时，请开一颗药。并强调将在下午4点整在 AIE 博览会上，先到先得。
+<a href="https://x.com/swyx/status/2071692683182252317">查看推文</a>  
+来源：AI Engineer World's Fair 创始人，AI 工程师社区领袖</p><p><h3>Swyx 的推文</h3>
+Swyx 介绍了在星期一早上9点进行的非实验室工作坊，并指出有一个与 OpenAI 的工作坊竞争，但他列出了其他几家公司的参与情况。
+<a href="https://x.com/swyx/status/2071634789669777716">查看推文</a>  
+来源：AI Engineer World's Fair 创始人，AI 工程师社区领袖</p><p><h3>Swyx 的推文</h3>
+Swyx 分享了 AIE 工作坊的日程安排。
+<a href="https://x.com/swyx/status/2071613383380770823">查看推文</a>  
+来源：AI Engineer World's Fair 创始人，AI 工程师社区领袖</p><p><h3>Boris Cherny 的推文</h3>
+Boris Cherny 提到，在 Claude Code 的下一个版本中，子代理默认在后台运行，因此用户可以在子代理工作时继续与 Claude 交谈。如果希望代理在前台运行，只需告知即可。
+<a href="https://x.com/bcherny/status/2071647677591466098">查看推文</a>  
+来源：无</p><p><h3>Thibault Sottiaux 的推文</h3>
+Thibault Sottiaux 提到，Codex 使用限制将在下一个小时内完全重置，并将在接下来的24小时内为用户的使用额外增加一次重置。
+<a href="https://x.com/thsottiaux/status/2071740419030053227">查看推文</a>  
+来源：无</p><p><h3>Thibault Sottiaux 的推文</h3>
+Thibault Sottiaux 提问：“你认为它有重置按钮吗？”
+<a href="https://x.com/thsottiaux/status/2071710834527523030">查看推文</a>  
+来源：无</p><p><h3>Thibault Sottiaux 的推文</h3>
+Thibault Sottiaux 提到，对于高级 Codex 用户，我们推出了一种替代粗糙沙盒模式的功能：可重用、可继承的权限配置文件，将操作系统强制执行的文件读/写/拒绝规则（甚至 **/*.env）绑定到每个域的网络。
+<a href="https://x.com/thsottiaux/status/2071636285807059315">查看推文</a>  
+来源：无</p><p><h3>Peter Yang 的推文</h3>
+Peter Yang 表示，对于写作和编辑，普通版本的 Claude 网页仍然是最佳选择（相比 Codex 和 Claude Code）。他猜测编码代理的系统提示可能使得它们的写作能力变差。
+<a href="https://x.com/petergyang/status/2071731343390851519">查看推文</a>  
+来源：Roblox 首席产品官</p>
+  <div class="footer">
+    <p>📢 <strong>关于本账号</strong></p>
+    <p>本公众号每日推送 AI 圈最新动态，内容来源于 follow-builders 项目，由 AI 自动生成摘要。</p>
+    <p>🔗 想了解更多？访问 <a href="https://github.com/zarazhangrui/follow-builders">follow-builders</a></p>
+  </div>
+</body>
+</html>
