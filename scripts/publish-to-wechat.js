@@ -64,7 +64,7 @@ async function publishViaAPI(content) {
     
     // 提取标题和内容
     const titleMatch = content.match(/^# (.+)$/m);
-    const title = titleMatch ? titleMatch[1] : 'AI 圈日报';
+    const title = titleMatch ? titleMatch[1] : 'AI HOT 日报';
     
     // 上传素材（这里简化为创建草稿）
     console.log('📝 创建草稿...');
@@ -72,10 +72,10 @@ async function publishViaAPI(content) {
       articles: [
         {
           title: title,
-          author: 'AI 自动生成',
-          digest: '每日 AI 圈最新动态，一键掌握',
+          author: 'AI HOT',
+          digest: '每日 AI 中文日报，一键掌握',
           content: content,
-          content_source_url: 'https://github.com/zarazhangrui/follow-builders',
+          content_source_url: 'https://aihot.virxact.com',
           thumb_media_id: '', // 需要先上传封面图
           need_open_comment: 1,
           only_fans_can_comment: 0

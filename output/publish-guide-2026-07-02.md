@@ -50,33 +50,22 @@
 
 ## 📄 今日内容预览
 
-# AI 圈日报 - 2026年7月2日星期四
+# AI HOT 日报 - 2026年7月2日星期四
 
+> 数据来自 AI HOT（https://aihot.virxact.com），链接优先指向站内中文阅读页。
 
-## 📰 重要博客文章
+## 模型发布/更新
 
-（暂无）
+### 1. 美团 LongCat-2.0 正式发布：国产算力集群训练的万亿参数大模型
 
-## 🎙️ 最新播客节选
+- 来源：公众号：龙猫LongCat（美团）
+- 摘要：美团于6月30日发布新一代万亿参数大模型LongCat-2.0并开源。总参数1.6T，平均激活约48B，原生支持1M超长上下文，在五万卡国产算力集群上完成全流程训练与推理。采用LSA稀疏注意力、零计算专家、ScMoE及MOPD多专家融合（Agent/Reasoning/Interaction三组专家）架构。评测中SWE-bench Pro获59.5，SWE-bench Multilingual获77.3。预览版已通过OpenRouter和longcat.ai开放，月调用量跻身OpenRouter全球前三。
+- 阅读：https://aihot.virxact.com/items/cmr1js18u03imslnld2yrjboo
 
-### 硬件与软件共同设计是AI真正的100倍提升：来自SemiAnalysis的Dylan Patel
-
-在这期播客中，Dylan Patel分享了他在SemiAnalysis的经历，强调了团队中技术工程师与金融分析师的合作。他指出，尽管团队内部会有激烈的讨论，但这种多样性推动了创新与技术的进步。  
-[收听完整播客](https://www.youtube.com/watch?v=f6D_aiy8qyU)
-
-## 🐦 Twitter 热门动态
-
-### Swyx提到成功的AIEWF海报展示日
-
-AI工程师社区的创始人Swyx分享了在AI工程师世界博会（AIEWF）上首次海报展示日的成功，并感谢了相关支持者。他鼓励大家明天提交最热的推文以便打印展示。  
-[查看推文](https://x.com/swyx/status/2072048730581405800)
-
-### Boris Cherny转发一条消息
-
-Boris Cherny表示对此观点表示赞同，并分享...
+### 2. NVI...
 
 （完整内容请查看 output/latest-for-wechat.txt）
 
 ---
 
-生成时间：2026/7/2 10:37:53
+生成时间：2026/7/2 11:43:46

@@ -1,310 +1,161 @@
 #!/usr/bin/env node
 /**
- * 使用 AI 生成内容摘要
- * 支持 OpenAI API 或 GitHub Models
+ * 将 AI HOT 官方日报整理为 Markdown。
+ * AI HOT 已提供中文摘要，因此这里不再依赖 OpenAI 或 GitHub Models。
  */
 
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import OpenAI from 'openai';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.join(__dirname, '..');
 const outputDir = path.join(rootDir, 'output');
 
-// 读取数据源简介配置
-let sourceProfiles = { blogs: [], podcasts: [], twitter: [] };
-const profilesPath = path.join(rootDir, 'source-profiles.json');
-if (fs.existsSync(profilesPath)) {
-  try {
-    sourceProfiles = JSON.parse(fs.readFileSync(profilesPath, 'utf8'));
-    console.log('✅ 已加载数据源简介配置');
-  } catch (error) {
-    console.warn('⚠️  无法读取 source-profiles.json，将不使用简介信息');
-  }
-} else {
-  console.log('ℹ️  未找到 source-profiles.json，将不使用简介信息');
-}
+function generateSummary() {
+  console.log('📝 开始整理 AI HOT 日报...\n');
 
-async function generateSummary() {
-  console.log('🤖 开始生成 AI 内容摘要...\n');
-  
-  // 读取过滤后的feed数据
   const feedDataPath = path.join(outputDir, 'latest-feed.json');
   if (!fs.existsSync(feedDataPath)) {
-    console.error('❌ 未找到feed数据，请先运行 fetch-feed.js');
+    console.error('❌ 未找到 feed 数据，请先运行 fetch-feed.js');
     process.exit(1);
   }
-  
+
   const feedData = JSON.parse(fs.readFileSync(feedDataPath, 'utf8'));
-  
-  // 为数据添加来源简介
-  const enrichedData = enrichDataWithProfiles(feedData);
-  
-  // 压缩数据（避免超过 API 限制）
-  const compressedData = compressFeedData(enrichedData);
-  
-  // 初始化 OpenAI 客户端（支持 GitHub Models）
-  const apiKey = process.env.OPENAI_API_KEY || process.env.GITHUB_TOKEN;
-  const baseURL = process.env.OPENAI_BASE_URL || 'https://models.inference.ai.azure.com';
-  
-  if (!apiKey) {
-    console.error('❌ 未找到 API Key，请设置 OPENAI_API_KEY 或 GITHUB_TOKEN 环境变量');
-    console.log('💡 GitHub Models 可免费使用，访问 https://github.com/marketplace/models 获取');
+  if (feedData.source !== 'aihot' || feedData.type !== 'daily') {
+    console.error('❌ latest-feed.json 不是 AI HOT 日报数据，请先重新运行 npm run fetch');
     process.exit(1);
   }
-  
-  const client = new OpenAI({
-    apiKey: apiKey,
-    baseURL: baseURL
-  });
-  
-  const model = process.env.AI_MODEL || 'gpt-4o-mini';
-  
-  // 生成摘要
-  const summary = await generateContentSummary(client, model, compressedData);
-  
-  // 保存摘要
+
+  const summary = renderAihotDailyMarkdown(feedData);
   const timestamp = new Date().toISOString().split('T')[0];
-  const summaryPath = path.join(outputDir, `summary-${timestamp}.md`);
+  const reportDate = feedData.date || timestamp;
+
+  const summaryPath = path.join(outputDir, `summary-${reportDate}.md`);
   fs.writeFileSync(summaryPath, summary, 'utf8');
-  console.log(`\n✨ 摘要已生成: ${summaryPath}`);
-  
-  // 保存为最新摘要
+  console.log(`✨ 日报 Markdown 已生成: ${summaryPath}`);
+
   const latestSummaryPath = path.join(outputDir, 'latest-summary.md');
   fs.writeFileSync(latestSummaryPath, summary, 'utf8');
   console.log(`📝 最新摘要已更新: ${latestSummaryPath}`);
-  
+
   return summary;
 }
 
-// 压缩 feed 数据（避免超过 API 限制）
-function compressFeedData(feedData) {
-  const compressed = {};
-  
-  // 博客：最多3篇，只保留必要字段，内容截断到400字
-  if (Array.isArray(feedData.blogs) && feedData.blogs.length > 0) {
-    compressed.blogs = feedData.blogs.slice(0, 3).map(blog => ({
-      title: blog.title || '',
-      name: blog.name || '',
-      url: blog.url || '',
-      profile: blog.profile || '',
-      content: blog.content ? blog.content.substring(0, 400) : ''
-    }));
-  } else {
-    compressed.blogs = [];
+function renderAihotDailyMarkdown(daily) {
+  const displayDate = formatDate(daily.date);
+  let index = 1;
+  const lines = [
+    `# AI HOT 日报 - ${displayDate}`,
+    '',
+    `> 数据来自 AI HOT（${daily.sourceUrl || 'https://aihot.virxact.com'}），链接优先指向站内中文阅读页。`,
+    ''
+  ];
+
+  if (daily.lead?.title || daily.lead?.leadParagraph) {
+    lines.push('## 今日主线', '');
+    if (daily.lead.title) {
+      lines.push(`**${daily.lead.title}**`, '');
+    }
+    if (daily.lead.leadParagraph) {
+      lines.push(daily.lead.leadParagraph, '');
+    }
   }
-  
-  // 播客：最多1期，只保留必要字段，transcript截断到600字
-  if (Array.isArray(feedData.podcasts) && feedData.podcasts.length > 0) {
-    compressed.podcasts = feedData.podcasts.slice(0, 1).map(podcast => ({
-      title: podcast.title || '',
-      name: podcast.name || '',
-      url: podcast.url || '',
-      profile: podcast.profile || '',
-      transcript: podcast.transcript ? podcast.transcript.substring(0, 600) : ''
-    }));
-  } else {
-    compressed.podcasts = [];
+
+  const sections = Array.isArray(daily.sections) ? daily.sections : [];
+  sections.forEach(section => {
+    const items = Array.isArray(section.items) ? section.items : [];
+    if (items.length === 0) return;
+
+    lines.push(`## ${section.label || '未分类'}`, '');
+
+    items.forEach(item => {
+      const link = getItemLink(item);
+      lines.push(`### ${index}. ${item.title || '无标题'}`, '');
+      lines.push(`- 来源：${item.sourceName || '未知来源'}`);
+      if (item.summary) {
+        lines.push(`- 摘要：${cleanSummary(item.summary)}`);
+      }
+      if (link) {
+        lines.push(`- 阅读：${link}`);
+      }
+      lines.push('');
+      index += 1;
+    });
+  });
+
+  const flashes = Array.isArray(daily.flashes) ? daily.flashes : [];
+  if (flashes.length > 0) {
+    lines.push('## 快讯', '');
+    flashes.forEach(item => {
+      const link = getItemLink(item);
+      const time = formatBeijingTime(item.publishedAt);
+      const source = item.sourceName ? ` — ${item.sourceName}` : '';
+      const timeText = time ? `（${time}）` : '';
+      const linkText = link ? `：${link}` : '';
+      lines.push(`- ${item.title || '无标题'}${source}${timeText}${linkText}`);
+    });
+    lines.push('');
   }
-  
-  // Twitter：最多8条，只保留必要字段，text截断到200字
-  if (Array.isArray(feedData.twitter) && feedData.twitter.length > 0) {
-    compressed.twitter = feedData.twitter.slice(0, 8).map(tweet => ({
-      handle: tweet.handle || '',
-      name: tweet.name || '',
-      profile: tweet.profile || '',
-      text: tweet.text ? tweet.text.substring(0, 200) : '',
-      url: tweet.url || '',
-      createdAt: tweet.createdAt || ''
-    }));
-  } else {
-    compressed.twitter = [];
-  }
-  
-  return compressed;
+
+  lines.push('---', '');
+  lines.push('*本日报由 AI HOT 提供中文资讯与摘要，本项目自动整理并推送。*');
+
+  return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';
 }
 
-// 为 feed 数据添加来源简介
-function enrichDataWithProfiles(feedData) {
-  const enriched = JSON.parse(JSON.stringify(feedData)); // 深拷贝
-  
-  // 为博客添加简介
-  if (Array.isArray(enriched.blogs)) {
-    enriched.blogs = enriched.blogs.map(blog => {
-      const profile = sourceProfiles.blogs.find(p => 
-        p.name === blog.name || (blog.url && p.url && blog.url.includes(p.url))
-      );
-      return {
-        ...blog,
-        profile: profile ? profile.profile : ''
-      };
-    });
-  }
-  
-  // 为播客添加简介
-  if (Array.isArray(enriched.podcasts)) {
-    enriched.podcasts = enriched.podcasts.map(podcast => {
-      const profile = sourceProfiles.podcasts.find(p => 
-        p.name === podcast.name
-      );
-      return {
-        ...podcast,
-        profile: profile ? profile.profile : ''
-      };
-    });
-  }
-  
-  // 为 Twitter 添加简介
-  if (Array.isArray(enriched.twitter)) {
-    enriched.twitter = enriched.twitter.map(tweet => {
-      const profile = sourceProfiles.twitter.find(p => 
-        p.handle === tweet.handle
-      );
-      return {
-        ...tweet,
-        profile: profile ? profile.profile : ''
-      };
-    });
-  }
-  
-  return enriched;
+function getItemLink(item) {
+  return item.permalink || item.sourceUrl || item.url || '';
 }
 
-async function generateContentSummary(client, model, feedData) {
-  const date = new Date().toLocaleDateString('zh-CN', {
+function cleanSummary(summary) {
+  return String(summary).replace(/\s+/g, ' ').trim();
+}
+
+function formatDate(dateString) {
+  if (!dateString) {
+    return new Date().toLocaleDateString('zh-CN', {
+      timeZone: 'Asia/Shanghai',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      weekday: 'long'
+    });
+  }
+
+  const date = new Date(`${dateString}T00:00:00+08:00`);
+  return date.toLocaleDateString('zh-CN', {
+    timeZone: 'Asia/Shanghai',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
     weekday: 'long'
   });
-  
-  // 构建提示词
-  const prompt = `你是一个专业的AI行业内容编辑。请根据以下从 follow-builders 项目获取的英文内容，生成一份**全中文**的日报。
-
-**重要：所有内容必须翻译成中文，不能出现英文原文！**
-
-**要求**：
-1. 标题格式：# AI 圈日报 - ${date}
-2. 内容分类：
-   - 📰 重要博客文章（来自 Anthropic 等官方博客）
-   - 🎙️ 最新播客节选（来自顶尖AI播客）
-   - 🐦 Twitter 热门动态（来自AI建造者的推文）
-3. 每条内容包含：
-   - 中文标题/主题（必须翻译，不能保留英文）
-   - 核心观点（2-3句中文概括，必须翻译原文内容）
-   - 原文链接（保留原链接）
-   - 来源简介（如果数据中有 profile 字段，请在开头自然地融入，例如："OpenAI CEO Sam Altman 在最新推文中提到..."）
-4. 语言风格：专业、简洁、易懂，**全文必须为中文**
-5. 总长度控制在 1500-2000 字
-
-**关键提示**：
-- 博客标题和内容必须翻译成中文，不能保留英文标题
-- Twitter 推文内容必须翻译成中文，不能保留英文原文
-- 播客标题和内容必须翻译成中文
-- 只有人名、产品名可以保留英文（如：Claude、GPT-4），但必须有中文解释
-
-**数据源**：
-${JSON.stringify(feedData, null, 2)}
-
-请直接输出 Markdown 格式的日报内容，不要添加额外解释。`;
-  
-  console.log('📡 正在调用 AI 模型生成摘要...');
-  
-  try {
-    const response = await client.chat.completions.create({
-      model: model,
-      messages: [
-        {
-          role: 'system',
-          content: '你是一个专业的AI行业内容编辑，擅长将英文技术内容转化为简洁易懂的中文摘要。'
-        },
-        {
-          role: 'user',
-          content: prompt
-        }
-      ],
-      temperature: 0.7,
-      max_tokens: 3000
-    });
-    
-    const summary = response.choices[0].message.content;
-    console.log('✅ AI 摘要生成成功');
-    return summary;
-    
-  } catch (error) {
-    console.error('❌ AI 摘要生成失败:', error.message);
-    
-    // 如果AI调用失败，返回基础版本
-    return generateBasicSummary(feedData, date);
-  }
 }
 
-function generateBasicSummary(feedData, date) {
-  let summary = `# AI 圈日报 - ${date}\n\n`;
-  
-  // 博客内容
-  if (feedData.blogs && feedData.blogs.length > 0) {
-    summary += '## 📰 官方博客\n\n';
-    feedData.blogs.slice(0, 5).forEach((blog, index) => {
-      summary += `### ${index + 1}. ${blog.title || '无标题'}\n\n`;
-      summary += `- 来源：${blog.name || blog.source || '未知'}`;
-      if (blog.profile) {
-        summary += `（${blog.profile}）`;
-      }
-      summary += `\n`;
-      summary += `- 链接：${blog.url || '#'}\n`;
-      if (blog.description) {
-        summary += `- 简介：${blog.description.substring(0, 200)}...\n`;
-      }
-      summary += '\n';
-    });
-  }
-  
-  // 播客内容
-  if (feedData.podcasts && feedData.podcasts.length > 0) {
-    summary += '## 🎙️ 最新播客\n\n';
-    feedData.podcasts.slice(0, 3).forEach((podcast, index) => {
-      summary += `### ${index + 1}. ${podcast.title || '无标题'}\n\n`;
-      summary += `- 频道：${podcast.name || '未知'}`;
-      if (podcast.profile) {
-        summary += `（${podcast.profile}）`;
-      }
-      summary += `\n`;
-      summary += `- 链接：${podcast.url || '#'}\n\n`;
-    });
-  }
-  
-  // Twitter内容
-  if (feedData.twitter && feedData.twitter.length > 0) {
-    summary += '## 🐦 Twitter 动态\n\n';
-    feedData.twitter.slice(0, 10).forEach((tweet, index) => {
-      const handle = tweet.handle || 'unknown';
-      const name = tweet.name || handle;
-      summary += `### ${index + 1}. @${handle}`;
-      if (tweet.profile) {
-        summary += `（${name}，${tweet.profile}）`;
-      }
-      summary += `\n\n`;
-      summary += `${tweet.text || tweet.content || '无内容'}\n\n`;
-      summary += `- 链接：${tweet.url || '#'}\n\n`;
-    });
-  }
-  
-  summary += '\n---\n\n*本日报由 AI 自动生成，内容来源于 follow-builders 项目*';
-  
-  return summary;
+function formatBeijingTime(dateString) {
+  if (!dateString) return '';
+
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) return '';
+
+  return date.toLocaleString('zh-CN', {
+    timeZone: 'Asia/Shanghai',
+    month: 'numeric',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  });
 }
 
-// 主函数
-async function main() {
+function main() {
   try {
-    await generateSummary();
-    console.log('\n🎉 摘要生成完成！');
+    generateSummary();
+    console.log('\n🎉 日报整理完成！');
   } catch (error) {
-    console.error('❌ 执行失败:', error);
+    console.error('❌ 执行失败:', error.message);
     process.exit(1);
   }
 }

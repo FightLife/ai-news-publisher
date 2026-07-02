@@ -12,7 +12,6 @@ permissions:
   contents: write
   issues: write
   actions: read
-  models: read
 
 jobs:
   generate-and-publish:
@@ -31,22 +30,18 @@ jobs:
       - name: 📦 安装依赖
         run: npm install
       
-      - name: 🔍 拉取 AI 内容数据
+      - name: 🔍 拉取 AI HOT 日报
         run: npm run fetch
       
-      - name: 🤖 生成 AI 摘要
+      - name: 📝 整理 AI HOT 日报
         run: npm run summarize
-        env:
-          # OpenAI API（如果使用）
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
-          
-          # 或使用 GitHub Models（免费）
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          AI_MODEL: gpt-4o-mini
       
-      - name: 🎨 格式化为公众号格式
+      - name: 🎨 格式化为公众号和邮件格式
         run: npm run format
+
+      - name: 🗓️ 读取日报日期
+        run: |
+          node -e "const fs=require('fs'); const data=JSON.parse(fs.readFileSync('output/latest-feed.json','utf8')); console.log('REPORT_DATE=' + (data.date || new Date().toISOString().slice(0,10)))" >> "$GITHUB_ENV"
       
       - name: 📤 发布到公众号
         run: npm run publish
@@ -70,11 +65,10 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: AI 圈日报 - ${{ github.run_id }}
-          html_body: file://output/latest-for-wechat.txt
+          subject: AI HOT 日报 - ${{ env.REPORT_DATE }}
+          html_body: file://output/latest-email.html
           to: 504029540@qq.com
-          from: AI 圈日报自动推送
-          convert_markdown: true
+          from: AI HOT 日报自动推送
       
       - name: 📝 提交生成的文件到仓库
         if: success()
@@ -97,5 +91,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: `❌ AI 日报生成失败 - ${date}`,
-              body: `自动化流程执行失败，请检查 [Actions 日志](${{ github.server_url }}/${{ github.repo }}/actions/runs/${{ github.run_id }})`
+              body: `自动化流程执行失败，请检查 [Actions 日志](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})`
             });

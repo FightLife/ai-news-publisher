@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 /**
- * 将AI摘要格式化为公众号适配的格式
- * 输出HTML格式（可直接复制到公众号编辑器）
+ * 将 AI HOT 日报 Markdown 格式化为公众号复制版与邮件 HTML。
  */
 
 import fs from 'fs';
@@ -14,172 +13,288 @@ const rootDir = path.join(__dirname, '..');
 const outputDir = path.join(rootDir, 'output');
 
 function formatForWechat() {
-  console.log('🎨 开始格式化为公众号格式...\n');
-  
-  // 读取最新摘要
+  console.log('🎨 开始格式化 AI HOT 日报...\n');
+
   const summaryPath = path.join(outputDir, 'latest-summary.md');
   if (!fs.existsSync(summaryPath)) {
     console.error('❌ 未找到摘要文件，请先运行 generate-summary.js');
     process.exit(1);
   }
-  
+
   const markdown = fs.readFileSync(summaryPath, 'utf8');
-  const timestamp = new Date().toISOString().split('T')[0];
-  
-  // 转换为公众号友好的HTML格式
-  const html = convertMarkdownToWechatHTML(markdown);
-  
-  // 保存HTML文件
-  const htmlPath = path.join(outputDir, `wechat-${timestamp}.html`);
-  fs.writeFileSync(htmlPath, html, 'utf8');
-  console.log(`✅ HTML版本已保存: ${htmlPath}`);
-  
-  // 保存为精简版Markdown（去除多余空行）
+  const reportDate = readReportDate();
+  const timestamp = reportDate || new Date().toISOString().split('T')[0];
+
   const cleanMarkdown = cleanMarkdownForCopy(markdown);
   const mdPath = path.join(outputDir, `wechat-${timestamp}.md`);
   fs.writeFileSync(mdPath, cleanMarkdown, 'utf8');
   console.log(`📝 Markdown版本已保存: ${mdPath}`);
-  
-  // 生成一键复制版本
+
   const copyPath = path.join(outputDir, 'latest-for-wechat.txt');
   fs.writeFileSync(copyPath, cleanMarkdown, 'utf8');
   console.log(`📋 最新版本（用于复制）: ${copyPath}`);
-  
-  return { htmlPath, mdPath, copyPath };
+
+  const html = convertMarkdownToHTML(cleanMarkdown, {
+    title: `AI HOT 日报 - ${timestamp}`,
+    mode: 'wechat'
+  });
+  const htmlPath = path.join(outputDir, `wechat-${timestamp}.html`);
+  fs.writeFileSync(htmlPath, html, 'utf8');
+  console.log(`✅ HTML版本已保存: ${htmlPath}`);
+
+  const emailHtml = convertMarkdownToHTML(cleanMarkdown, {
+    title: `AI HOT 日报 - ${timestamp}`,
+    mode: 'email'
+  });
+  const emailPath = path.join(outputDir, 'latest-email.html');
+  fs.writeFileSync(emailPath, emailHtml, 'utf8');
+  console.log(`📧 邮件HTML已保存: ${emailPath}`);
+
+  return { htmlPath, mdPath, copyPath, emailPath };
 }
 
-function convertMarkdownToWechatHTML(markdown) {
-  let html = markdown;
-  
-  // 标题转换
-  html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-  html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-  html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-  
-  // 加粗
-  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  
-  // 链接
-  html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>');
-  
-  // 列表项
-  html = html.replace(/^- (.*$)/gim, '<li>$1</li>');
-  html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-  
-  // 段落
-  html = html.replace(/\n\n/g, '</p><p>');
-  html = '<p>' + html + '</p>';
-  
-  // 添加公众号样式
-  const styledHTML = `
+function readReportDate() {
+  const feedPath = path.join(outputDir, 'latest-feed.json');
+  if (!fs.existsSync(feedPath)) return '';
+
+  try {
+    const feed = JSON.parse(fs.readFileSync(feedPath, 'utf8'));
+    return feed.date || '';
+  } catch (error) {
+    return '';
+  }
+}
+
+function convertMarkdownToHTML(markdown, options = {}) {
+  const body = renderMarkdownBody(markdown);
+  const isEmail = options.mode === 'email';
+  const maxWidth = isEmail ? '760px' : '680px';
+  const background = isEmail ? '#f6f8fb' : '#ffffff';
+  const contentBackground = '#ffffff';
+
+  return `
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>AI 圈日报</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(options.title || 'AI HOT 日报')}</title>
   <style>
     body {
+      margin: 0;
+      padding: ${isEmail ? '24px 12px' : '20px'};
+      background: ${background};
+      color: #1f2933;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height:1.8;
-      color: #333;
-      max-width: 680px;
+      line-height: 1.75;
+    }
+    .container {
+      max-width: ${maxWidth};
       margin: 0 auto;
-      padding: 20px;
+      background: ${contentBackground};
+      ${isEmail ? 'border: 1px solid #e5e7eb; border-radius: 8px; padding: 28px;' : ''}
     }
     h1 {
-      font-size: 24px;
-      color: #1a1a1a;
-      border-bottom: 3px solid #07C160;
-      padding-bottom: 10px;
+      margin: 0 0 18px;
+      padding-bottom: 14px;
+      border-bottom: 3px solid #0f766e;
+      color: #111827;
+      font-size: 26px;
+      line-height: 1.35;
     }
     h2 {
-      font-size: 20px;
-      color: #07C160;
-      margin-top: 30px;
+      margin: 32px 0 14px;
+      padding-left: 10px;
+      border-left: 4px solid #0f766e;
+      color: #0f766e;
+      font-size: 21px;
+      line-height: 1.4;
     }
     h3 {
-      font-size: 18px;
-      color: #333;
-      margin-top: 20px;
+      margin: 22px 0 10px;
+      color: #111827;
+      font-size: 17px;
+      line-height: 1.45;
     }
     p {
-      margin: 15px 0;
+      margin: 10px 0;
+    }
+    blockquote {
+      margin: 0 0 22px;
+      padding: 10px 14px;
+      background: #eef7f6;
+      border-left: 4px solid #14b8a6;
+      color: #46615f;
     }
     ul {
-      padding-left: 25px;
+      margin: 8px 0 18px;
+      padding-left: 22px;
     }
     li {
-      margin: 8px 0;
+      margin: 6px 0;
     }
     a {
-      color: #07C160;
+      color: #0f766e;
       text-decoration: none;
+      word-break: break-all;
     }
     a:hover {
       text-decoration: underline;
     }
     hr {
-      border: none;
-      border-top: 1px solid #eee;
+      border: 0;
+      border-top: 1px solid #e5e7eb;
       margin: 30px 0;
     }
     .footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 2px solid #07C160;
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 2px solid #0f766e;
+      color: #64748b;
       font-size: 14px;
-      color: #888;
     }
   </style>
 </head>
 <body>
-${html}
-  <div class="footer">
-    <p>📢 <strong>关于本账号</strong></p>
-    <p>本公众号每日推送 AI 圈最新动态，内容来源于 follow-builders 项目，由 AI 自动生成摘要。</p>
-    <p>🔗 想了解更多？访问 <a href="https://github.com/zarazhangrui/follow-builders">follow-builders</a></p>
-  </div>
+  <main class="container">
+${body}
+    <div class="footer">
+      <p><strong>关于本账号</strong></p>
+      <p>本邮件每日推送 AI HOT 中文日报，由 GitHub Actions 自动获取、整理并发送。</p>
+      <p>数据来源：<a href="https://aihot.virxact.com">AI HOT</a></p>
+    </div>
+  </main>
 </body>
 </html>
   `.trim();
-  
-  return styledHTML;
+}
+
+function renderMarkdownBody(markdown) {
+  const lines = markdown.split('\n');
+  const html = [];
+  let paragraph = [];
+  let inList = false;
+
+  const flushParagraph = () => {
+    if (paragraph.length === 0) return;
+    html.push(`    <p>${renderInline(paragraph.join(' '))}</p>`);
+    paragraph = [];
+  };
+
+  const closeList = () => {
+    if (!inList) return;
+    html.push('    </ul>');
+    inList = false;
+  };
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+
+    if (!line) {
+      flushParagraph();
+      closeList();
+      continue;
+    }
+
+    if (line === '---') {
+      flushParagraph();
+      closeList();
+      html.push('    <hr>');
+      continue;
+    }
+
+    if (line.startsWith('# ')) {
+      flushParagraph();
+      closeList();
+      html.push(`    <h1>${renderInline(line.slice(2))}</h1>`);
+      continue;
+    }
+
+    if (line.startsWith('## ')) {
+      flushParagraph();
+      closeList();
+      html.push(`    <h2>${renderInline(line.slice(3))}</h2>`);
+      continue;
+    }
+
+    if (line.startsWith('### ')) {
+      flushParagraph();
+      closeList();
+      html.push(`    <h3>${renderInline(line.slice(4))}</h3>`);
+      continue;
+    }
+
+    if (line.startsWith('> ')) {
+      flushParagraph();
+      closeList();
+      html.push(`    <blockquote>${renderInline(line.slice(2))}</blockquote>`);
+      continue;
+    }
+
+    if (line.startsWith('- ')) {
+      flushParagraph();
+      if (!inList) {
+        html.push('    <ul>');
+        inList = true;
+      }
+      html.push(`      <li>${renderInline(line.slice(2))}</li>`);
+      continue;
+    }
+
+    closeList();
+    paragraph.push(line);
+  }
+
+  flushParagraph();
+  closeList();
+
+  return html.join('\n');
+}
+
+function renderInline(text) {
+  let html = escapeHtml(text);
+
+  html = html.replace(
+    /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+    '<a href="$2">$1</a>'
+  );
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+  html = html.replace(
+    /(?<!href=")(https?:\/\/[^\s<）)，。]+)/g,
+    '<a href="$1">$1</a>'
+  );
+
+  return html;
 }
 
 function cleanMarkdownForCopy(markdown) {
-  let cleaned = markdown;
-  
-  // 去除过多的空行
-  cleaned = cleaned.replace(/\n{3,}/g, '\n\n');
-  
-  // 确保标题格式正确
-  cleaned = cleaned.replace(/^(#{1,3}) (.+)$/gm, '$1 $2\n');
-  
-  // 添加公众号友好的分隔符
-  cleaned = cleaned.replace(/^---$/gm, '\n---\n');
-  
-  // 添加结尾信息
+  let cleaned = markdown.replace(/\n{3,}/g, '\n\n').trim();
+
   if (!cleaned.includes('关于本账号')) {
-    cleaned += '\n\n---\n\n## 📢 关于本账号\n\n';
-    cleaned += '本公众号每日推送 AI 圈最新动态，内容来源于 follow-builders 项目，由 AI 自动生成摘要。\n\n';
-    cleaned += '🔗 想了解更多？访问 [follow-builders](https://github.com/zarazhangrui/follow-builders)\n';
+    cleaned += '\n\n---\n\n## 关于本账号\n\n';
+    cleaned += '本邮件每日推送 AI HOT 中文日报，由 GitHub Actions 自动获取、整理并发送。\n\n';
+    cleaned += '数据来源：[AI HOT](https://aihot.virxact.com)\n';
   }
-  
-  return cleaned;
+
+  return cleaned + '\n';
 }
 
-// 主函数
-async function main() {
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function main() {
   try {
-    const result = formatForWechat();
+    formatForWechat();
     console.log('\n🎉 格式化完成！');
-    console.log('\n📋 下一步：');
-    console.log('  1. 打开 output/latest-for-wechat.txt');
-    console.log('  2. 复制全部内容');
-    console.log('  3. 粘贴到公众号编辑器');
-    console.log('  4. 预览并发布\n');
   } catch (error) {
-    console.error('❌ 执行失败:', error);
+    console.error('❌ 执行失败:', error.message);
     process.exit(1);
   }
 }
