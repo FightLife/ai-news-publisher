@@ -1,100 +1,107 @@
-# AI HOT 日报 - 2026年10月13日星期二
+# AI HOT 日报 - 2026年10月14日星期三
 
 > 数据来自 AI HOT（https://aihot.virxact.com），链接优先指向站内中文阅读页。
 
 ## 今日主线
 
-**Meta 发布 Muse Wonder 和 Muse Wonder Full，Artificial Analysis 实测智能水平较前代显著提升**
+**Google 发布 Gemini 4 Argon：面向复杂工程与科研任务的前沿模型**
 
-Meta 发布 Muse Wonder 和 Muse Wonder Full 两款模型，在 Artificial Analysis Intelligence Index v4.3 上分别得 52 和 56 分（max reasoning effort）。
+Google 发布 Gemini 4 Argon，面向开发者、企业、科学家和消费者全球开放，可经 Gemini API、AI Studio、Google Antigravity。
 
 ## 模型发布/更新
 
-### 1. Meta 发布 Muse Wonder 和 Muse Wonder Full，Artificial Analysis 实测智能水平较前代显著提升
+### 1. Google 发布 Gemini 4 Argon：面向复杂工程与科研任务的前沿模型
 
-- 来源：Artificial Analysis 完整文章（网页）
-- 摘要：Meta 发布 Muse Wonder 和 Muse Wonder Full 两款模型，在 Artificial Analysis Intelligence Index v4.3 上分别得 52 和 56 分（max reasoning effort）。
-- 阅读：https://aihot.news/items/v3pogrzxrk9oba4blox86d0w8
+- 来源：Google Blog：AI（RSS）
+- 摘要：Google 发布 Gemini 4 Argon，面向开发者、企业、科学家和消费者全球开放，可经 Gemini API、AI Studio、Google Antigravity。
+- 阅读：https://aihot.news/items/smxxtw5ca2c9jscojk4ppe5hf
+
+### 2. 面壁智能开源 MiniCPM-V 4.7，35B-A3B MoE 模型 3GB 内存端侧流畅运行
+
+- 来源：公众号：面壁智能（MiniCPM）
+- 摘要：面壁智能联合 OpenBMB 社区于10月13日发布并开源 MiniCPM-V 4.7，包含 35B-A3B 和 1B 两个版本，称其为全球首个可在端侧无损流畅运行的开源 MoE 多模态大模型。
+- 阅读：https://aihot.news/items/fidy0y9chlgs0puyn96qkmj1b
+
+### 3. Liquid AI 发布 LFM2.5-24B-A2B 端侧推理模型
+
+- 来源：Liquid AI 模型与工程博客（网页）
+- 摘要：Liquid AI 发布开源权重模型 LFM2.5-24B-A2B，总参数 24B、每 token 激活 2B，定位端侧快速智能体。
+- 阅读：https://aihot.news/items/j0hjfg7ioz2gs0s8msqnafpjj
 
 ## 产品发布/更新
 
-### 2. xAI 推出 The X Subscription 整合 Grok、Grok Bot、Cursor 与 X Premium
+### 4. Google DeepMind 的 Gemini 4 Argon 上线 OpenRouter
 
-- 来源：xAI：News（网页）
-- 摘要：xAI 推出 The X Subscription 订阅，将 Grok、Grok Bot、Cursor 和 X Premium 合入一个计划，未来几天内向全球用户开放。
-- 阅读：https://aihot.news/items/uy4hvoyz7fwtyycpu0p62dudn
+- 来源：X：OpenRouter (@OpenRouter)
+- 摘要：Gemini 4 Argon 已上线 OpenRouter，可通过 Google AI Studio 和 Google Cloud 调用。该模型在 AutomationBench 拿到 51.3%、LVBench 拿到 91.7%，并以 68% 并列 CWE-bench v1 第一； introductory 定价为输入 $2/M、输出 $10/M。试用入口：https://openrouter.ai/google/gemini-4-argon
+- 阅读：https://aihot.news/items/d4oyzg3qte4pt0ywsonolctwf
 
-### 3. 微软发布自研芯片 Maia 300 并将大规模扩展 Maia 推理部署
+### 5. Apple 发布 7 英寸智能音箱 HomeView，售价 299 美元并搭载 Siri AI
 
-- 来源：X：Satya Nadella (@satyanadella)
-- 摘要：微软宣布明年起将 Maia 芯片家族扩展到多吉瓦级部署，作为自家产品和服务的首选推理系统，并发布 Maia 300，每瓦 token 产出比主流 GPU 系统高 40%。Maia 200 已在美国、欧洲和澳大利亚部署，在 Teams 和 Copilot 场景中每瓦 token 产出提升最高 1.7x。
-- 阅读：https://aihot.news/items/zqlqer8tnl7ejg2ow3xoq7b9q
+- 来源：Apple：Newsroom（RSS）
+- 摘要：Apple 发布配备 7 英寸 Liquid Retina 显示屏的 HomeView，集娱乐、FaceTime、家庭监控和语音自动化于一体，标准版与壁挂版均定价 299 美元，11 月 13 日起在美英加澳等市场发售。
+- 阅读：https://aihot.news/items/kjcq4dywmvs5xijl4emac5o40
+
+### 6. NVIDIA 官宣 RTX Spark 软件生态就绪，10 月 16 日笔记本上市
+
+- 来源：NVIDIA Blog（RSS）
+- 摘要：NVIDIA 介绍 RTX Spark 平台生态就绪情况，RTX Spark 笔记本将于 10 月 16 日（周五）上市，搭载最高 128GB 统一内存和 1 petaflop AI 算力。
+- 阅读：https://aihot.news/items/ug7g6psicfobnnft0ebgpyl10
+
+### 7. 千问发布AI眼镜N1/N1 Pro及首款AI耳夹式耳机并现货开售
+
+- 来源：公众号：千问APP（阿里）
+- 摘要：千问发布三款硬件新品：AI眼镜N1、N1 Pro和AI耳夹式耳机，今日在淘宝、天猫、京东、抖音等平台现货开售，眼镜到手价2218元起，耳机1099元起。
+- 阅读：https://aihot.news/items/bnwd1psqg66c268n4i1mal2pi
 
 ## 行业动态
 
-### 4. Epic Games 转向 AI 先行开发模式，与迪士尼合作射击游戏无限期延期
+### 8. Character.AI 成立五年后申请 Chapter 11 破产，部分资产以 2000 万美元出售给 Disney
 
-- 来源：Ars Technica：AI（RSS）
-- 摘要：据 Bloomberg 报道，Epic Games 在与迪士尼 15 亿美元合作项目中转向 AI 先行开发，由 Anthropic 的 Claude 等模型编写全部代码并指导全部美术，人类开发者负责管理和引导生成内容。
-- 阅读：https://aihot.news/items/kcwro19vl7dr5jgcjgec7mive
+- 来源：TechCrunch：AI（RSS）
+- 摘要：Character.AI 已申请 Chapter 11 破产，法院文件显示其资产和负债在 5000 万至 1 亿美元之间，并同意以 2000 万美元向 Disney 出售部分资产及技术非独占永久许可。出售过程预计 11 月底或 12 月初完成，期间平台继续运营，但尚无竞购方，若无买家平台将关停；此前公司因未成年用户诉讼、德州调查等困境，曾尝试 AI 视频生成、社交信息流和微短剧等转型未果。
+- 阅读：https://aihot.news/items/vwu0li2nl5hztqeztnq8b5udc
 
-### 5. QGIS 通过 QEP428 禁止 AI 辅助贡献
+### 9. OpenAI 办公室发现窃密录音装置，涉事员工被捕
 
-- 来源：Hacker News：AI 热帖
-- 摘要：QGIS 通过 QEP428 提案，将 AI 政策改为严格的 NOT ALLOWED，由 nyalldawson 提交并于 2026 年 10 月 7 日合并进 QGIS-Enhancement-Proposals 仓库。
-- 阅读：https://aihot.news/items/t0gnehm6pcbj4xyn5f3txv1ge
+- 来源：X：OpenAI Newsroom (@OpenAINewsroom)
+- 摘要：OpenAI 宣布在办公室内发现一个隐蔽的录音装置，利用自家模型分析该设备及其来源，确认是一名员工几天前安放。OpenAI 已将此事移交 FBI，FBI 已迅速逮捕相关人员，调查仍在进行中。OpenAI 表示目前没有迹象显示该员工不当访问或外泄模型权重、源代码或客户数据，该员工已被解雇，并将此案视为 AI 协助应对复杂安全威胁的实例。
+- 阅读：https://aihot.news/items/fgxi5gwvctlssc05odpcyf6ov
 
-### 6. 用户报告 Codex CLI 0.157.0 默认启动持久化自更新后台守护进程
+### 10. XBOW 团队借助 OpenAI GPT-5.6 Sol 获 Google Chrome 25 万美元全链漏洞赏金
 
-- 来源：Codex：GitHub Releases（RSS）
-- 摘要：一位 Linux (WSL2) 用户报告，Codex CLI 0.157.0 起打开交互式会话即默认启动持久后台守护进程 codex app-server --managed-daemon，窗口关闭后仍驻留。
-- 阅读：https://aihot.news/items/amjmxvrvj57q7752kgihp9p9q
+- 来源：X：Vaibhav Srivastav（OpenAI）(@reach_vb)
+- 摘要：XBOW 团队使用 OpenAI 的 GPT-5.6 Sol 辅助，在 6 天内以 4 万美元算力构建出 Chrome 全链漏洞，获得 Google 25 万美元赏金，这是 Google 第二次就 Chrome 全链漏洞发放赏金，也是 2026 年新规则下的首次。受影响范围为 Windows 上的 Chrome，作者称过去类似漏洞需约 6 个月构建，并提醒用户在出现 Update 按钮时及时重启 Chrome。
+- 阅读：https://aihot.news/items/ekphiltd4fdsskdlueleul8qa
 
 ## 论文研究
 
-### 7. Anthropic 研究：小型 AI 模型可能接近在 IoT 设备上自主复制
+### 11. Anthropic 强化针对蒸馏攻击的防御， reasoning token 提取量下降 10 到 100 倍
 
 - 来源：Anthropic：Research（发表成果 · 网页）
-- 摘要：Anthropic 发文评估小型模型在无数据中心条件下自主复制（ARA）的可行性，作者实验显示 9B 模型可在测试的 9 类硬件中 8 类上跑通推理，30B 及以下模型已能完成复制的多数单步。
-- 阅读：https://aihot.news/items/emc0djmqlomn6b5whge285x7l
-
-### 8. AlphaProof Nexus 攻克 9 个未解 Erdős 问题并经同行评审
-
-- 来源：The Decoder：AI News（RSS）
-- 摘要：Science 新研究显示，Google DeepMind 的 AlphaProof Nexus 独立解决了 353 个开放 Erdős 问题中的 9 个，其中 2 个悬置 56 年。
-- 阅读：https://aihot.news/items/wzxf68r0rchangmvwm48qqhfk
+- 摘要：Anthropic 发布博客，介绍其针对 Claude 蒸馏攻击的新防御方法，早期证据显示这些方法使蒸馏者获取的数据减少约 90% 到 99%。
+- 阅读：https://aihot.news/items/lwchujhujmc1tdor61dn39irl
 
 ## 技巧与观点
 
-### 9. Vapi 自研代码审查机器人如何将 PR 合并时间缩短一半
+### 12. Anthropic 自研版本控制系统 Scion，五个月完成 monorepo 从 git 迁移
 
-- 来源：Vapi 产品与 Agent 方法
-- 摘要：Vapi 工程师 Lat Ware 自研 Pedantic Review Bot，使 PR 从开到合并的平均时间从 130 多小时降到 65 小时。机器人会运行测试和小复现来验证发现，分析和发评论分属两个 job，只能评论不能批准或推送；2026 年 9 月 2 日至 10 月 2 日审查了 1,694 个 PR，在 276 个中提出 363 个 blocker 发现。
-- 阅读：https://aihot.news/items/byijxcheeait7w4okuw9ebnh2
-
-### 10. 用 Claude Opus 5.5、Blender、Unreal Engine 和 Meshy 构建游戏的七步教程
-
-- 来源：X：Meshy (@MeshyAI)
-- 摘要：一篇教程介绍用 Claude Opus 5.5 配合 Claude Code、Blender、Unreal Engine 5 和 Meshy 构建游戏的方法。核心思路是给每个工具分配单一职责：通过 MCP 连接 Blender 和 Meshy，由 Meshy 生成道具和角色、Blender 清理和放置、Unreal 负责光照物理和游戏本身、Opus 在一个对话里调度三者。流程为先让 Opus 头脑风暴 5 个游戏点子再展开，告知 GPU 以便压满画面性能，首个完整构建约花 4 小时和约 19% 的每周 Max plan 用量，之后因素材复用会快很多。
-- 阅读：https://aihot.news/items/svvvhr5j2nnywgdw29pso7o49
-
-### 11. 如何只用自己拥有的文件约束编码智能体
-
-- 来源：Tessl：产品与工程博客
-- 摘要：Tessl 博客文章介绍用四个可拥有的文件杠杆约束编码智能体：CLAUDE.md 指令、.claude/rules/ 路径级规则、.claude/ 下的能力配置和 .claude/hooks/ 钩子。
-- 阅读：https://aihot.news/items/twhuaks920iaqd2y7frq8bgbw
-
-### 12. 从Brandon Thomas用Claude Opus 5.5开源重写Adobe全家桶看AI逆向一切趋势
-
-- 来源：X：卡兹克 (@Khazix0918)
-- 摘要：数字生命卡兹克撰文分析AI驱动逆向工程热潮：开发者Brandon Thomas因不满Adobe订阅规则，用Claude Opus 5.5以Rust逆向重写了Photoshop、Illustrator等7款软件的开源替代品PhotoCraft、VectorCraft等，不到10天单PS项目获4.6万Star。
-- 阅读：https://aihot.news/items/hvxwaxeyj6i82xv44ef4ce6fz
+- 来源：Anthropic：Engineering（事故复盘 + 工程实践 · 网页）
+- 摘要：Anthropic 发布工程复盘，因 Claude 使日均合并代码量从 2026 年 5 月约 2,500 增至 9 月超 30,000，五个月内自研版本控制系统 Scion 并完全替代 git，同时推出代码评审工具 Antique。
+- 阅读：https://aihot.news/items/fpyjwv3o9zwxc9zs7j1bmnw8i
 
 ## 快讯
 
-- AWS 提出 priming 方法，可将预训练 Transformer 改造成混合状态空间架构 — Amazon Science（RSS）（10/13 01:36）：https://aihot.news/items/w2408fxlrc7tc7nt3ivrzh9ys
-- Artificial Analysis 发布 FrontierCode 1.1 编程评测：Claude Opus 5.5 以 52% 得分居首，领先模型失败率仍超 40% — Artificial Analysis 完整文章（网页）（10/12 00:00）：https://aihot.news/items/fglgvxnnoy7zcxmaxxjrjl1hv
-- Sakana AI 提出多智能体自监督方法 MASS，探索递归自改进 — Sakana AI：Blog（网页）（10/11 23:00）：https://aihot.news/items/q4ldwa9zmnm1qrrv16ijfdq2w
+- Meta Muse Wonder (Max) 进入 Arena 榜单：WebDev 第15、文本第2 — X：Arena (@arena)（10/14 05:27）：https://aihot.news/items/ob6ryetyialrnqhyjusr2s1iz
+- ElevenLabs AI 重建嗓音助力 Baroness Campbell 在英国上议院发表演讲 — X：ElevenLabs (@elevenlabs)（10/13 23:58）：https://aihot.news/items/tggiswcje6mz1ti081jfbro43
+- Google 用 Gemini 4 Argon 无人值守优化 20 万行 Python 代码库 ADK — Google Developers Blog（RSS）（10/13 08:00）：https://aihot.news/items/z371wogdvjh86jh8s6v6vlrui
+- LangChain 发布 langchain-scaledown 集成，用 ScaleDown 约束解码模型管理长时智能体上下文 — LangChain：Blog（RSS）（10/13 19:56）：https://aihot.news/items/uljn62mk9ujyya1xg51hc6dp8
+- Pydantic AI 创始人 Samuel Colvin：图库是个错误，代码本身就是图 — Pydantic AI 官方文章（10/13 17:00）：https://aihot.news/items/tmj0de0vmzpezz0o5j67nqskj
+- ComfyUI 上线 NVIDIA VFX 节点，支持视频超分、补帧与 SDR 转 HDR — Comfy Blog（10/14 03:41）：https://aihot.news/items/uy1d8e2pcm6sked0p57flawpq
+- Hassabis 祝贺 AMIE 前瞻性临床研究发表于 The Lancet — X：Demis Hassabis (@demishassabis)（10/13 09:09）：https://aihot.news/items/qbi6xi7a3re15txfell8i9a7c
+- Prime Intellect 收购 Moondream，联合创始人加入主导推理与多模态 — Prime Intellect（网页）（10/13 00:00）：https://aihot.news/items/rruqd7cz78jq6l889kjp56jlz
+- LangSmith 推出 AI Search，用自然语言按行为搜索 agent 轨迹 — LangChain：Blog（RSS）（10/13 20:59）：https://aihot.news/items/cgbpvdepk4p1jrrawgzbfbxov
+- Manus 与 OPPO 合作，将 Agent 能力整合进 AI Mind Pilot — Manus：Blog（网页）（10/13 00:00）：https://aihot.news/items/vfvwtsnxhg7yalg8miyxbvd40
 
 ---
 
