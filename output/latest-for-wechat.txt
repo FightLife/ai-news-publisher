@@ -1,101 +1,105 @@
-# AI HOT 日报 - 2026年10月15日星期四
+# AI HOT 日报 - 2026年10月16日星期五
 
 > 数据来自 AI HOT（https://aihot.virxact.com），链接优先指向站内中文阅读页。
 
 ## 今日主线
 
-**Gemini 4 Argon 向全球 Google AI Pro 和 Ultra 订阅者开放**
+**Meta 发布开源权重模型 Muse Spark Open，816B 参数、1M 上下文**
 
-Gemini 官方宣布 Gemini 4 Argon 已向全球 Google AI Pro 和 Ultra 订阅者开放。该模型此前已在 Gemini 应用中逐步推出，定位为处理复杂任务的前沿模型，更多详情见官方推文线程 https://x.com/GeminiApp/status/2110039322229649783。
+Meta 发布开源权重模型 Muse Spark Open，已在 Hugging Face 以 Muse Model License 提供。模型总参数 816B、激活 42B，上下文窗口 1M token，面向编码与智能体工作流，原生多模态（图像、音频、文档），并相比 8 月发布的 Muse Spark 增加了安全后训练。
 
 ## 模型发布/更新
 
-### 1. Gemini 4 Argon 向全球 Google AI Pro 和 Ultra 订阅者开放
+### 1. Meta 发布开源权重模型 Muse Spark Open，816B 参数、1M 上下文
 
-- 来源：X：Gemini (@GeminiApp)
-- 摘要：Gemini 官方宣布 Gemini 4 Argon 已向全球 Google AI Pro 和 Ultra 订阅者开放。该模型此前已在 Gemini 应用中逐步推出，定位为处理复杂任务的前沿模型，更多详情见官方推文线程 https://x.com/GeminiApp/status/2110039322229649783。
-- 阅读：https://aihot.news/items/rraljkr6dlbt4wabpcogmdlfv
+- 来源：PyTorch：Blog（RSS）
+- 摘要：Meta 发布开源权重模型 Muse Spark Open，已在 Hugging Face 以 Muse Model License 提供。模型总参数 816B、激活 42B，上下文窗口 1M token，面向编码与智能体工作流，原生多模态（图像、音频、文档），并相比 8 月发布的 Muse Spark 增加了安全后训练。
+- 阅读：https://aihot.news/items/s80tw5g2v22j1se4bmqejyaq4
+
+### 2. NVIDIA 发布开源 Nemotron 3.5 Super VL 及 Bolt 两款端侧模型
+
+- 来源：NVIDIA Blog（RSS）
+- 摘要：NVIDIA 发布开源 1200 亿参数的 Nemotron 3.5 Super VL 多模态模型，称在其类别中任务完成最快、比同类次优快 5x，并推出两款端侧模型 Bolt 74B-A9B 24GB 与 Bolt E4B 4GB，后者 10 月 23 日上线。模型采用 2-bit 原生量化可在 RTX/DGX Spark 上本地运行，权重、数据集和训练配方开放，已有数十家机构基于自有数据后训练。
+- 阅读：https://aihot.news/items/l9jgzg24ei3a7m8xu1xfhy9n7
+
+### 3. Black Forest Labs 发布开源文生图模型 FLUX 3 Image Klein（5.6B）
+
+- 来源：Black Forest Labs：Blog（网页）
+- 摘要：Black Forest Labs 发布 5.6B 参数开源权重模型 FLUX 3 Image Klein，支持文生图、图像编辑和最多 10 张参考图的多参考生成，采用 FLUX Kommunity License。
+- 阅读：https://aihot.news/items/ybc0etkws56yxmrveyttxz3lm
+
+### 4. 阶跃星辰开放 Step 5 Preview 权重
+
+- 来源：X：阶跃星辰 StepFun (@StepFun_ai)
+- 摘要：阶跃星辰（StepFun）宣布 Step 5 Preview 开放权重，BF16 和 FP8 权重已上线 Hugging Face 和 ModelScope，并附技术博客。
+- 阅读：https://aihot.news/items/v0dw619te36yzweiqtuw7pjxs
 
 ## 产品发布/更新
 
-### 2. xAI 发布 Grok Voice 3.0 语音模型
+### 5. ChatGPT 为 Chrome 用户新增标签页读取与控制能力
 
-- 来源：xAI：News（网页）
-- 摘要：xAI 发布 speech-to-speech 模型 Grok Voice 3.0，在 Artificial Analysis 的 Speech-to-Speech Index 以 86.9 分排名第一，时延低于一秒。
-- 阅读：https://aihot.news/items/qld0z3p2gztpolbmviizsm66u
+- 来源：X：ChatGPT (@ChatGPT)
+- 摘要：ChatGPT 官宣面向 Chrome 用户带来升级，把 computer use 能力引入 Chrome。在聊天中，ChatGPT 可以查看用户打开的标签页并汇总信息；在工作模式下，它能控制 Chrome 标签页执行操作，如发送消息、填写表单、下载文件，还可帮助整理和分组打开的标签页。
+- 阅读：https://aihot.news/items/bme0mytjnlk0d2lk8hf7srzoh
 
-### 3. Google 发布智能体审稿系统 Deep Review，支持多领域技术文档审查
+### 6. 可灵 Kling 4.0 正式全量开放，新增 MCP 和 CLI 接入
 
-- 来源：Google Research：Blog（网页）
-- 摘要：Google 公开发布智能体审阅系统 Deep Review，可对复杂技术文档提供反馈与验证，最初面向计算机科学论文，现已扩展到法律、金融等领域。
-- 阅读：https://aihot.news/items/enqtz3wtz6khvf0m44z5a5jaz
+- 来源：X：可灵 Kling AI (@Kling_ai)
+- 摘要：可灵（Kling AI）宣布 Kling 4.0 正式全量开放，用户可通过 kling.ai 全新创作界面使用，并新增 MCP 和 CLI 接入以融入视频创作工作流。即将推出 4K 和 1080p 的 10-bit HDR 视频输出，以及面向企业客户和开发者的 API 访问。
+- 阅读：https://aihot.news/items/uoqzntmcb5v0io1g6obac7amu
 
-### 4. Lovable 推出增长工具，从同一聊天窗口帮你获客投广告和做 SEO
+### 7. Krea 3 图像模型通过 ComfyUI Partner Nodes 上线
 
-- 来源：Lovable Blog
-- 摘要：Lovable 推出增长工具，在原有建应用聊天窗口中提供增长计划、广告投放和 SEO 能力。用户设定目标后，Lovable 依据应用上下文生成可执行计划；可连接 Google Ads 和 Meta 账号在 Google。
-- 阅读：https://aihot.news/items/ooiqiluy56g21ir2u4phxjqu7
+- 来源：Comfy Blog
+- 摘要：Krea 3 图像模型现已在 ComfyUI 通过 Partner Nodes 提供，主打基于参考图的生成与编辑。模型强调更快的迭代速度和更低的单张成本，支持按上传顺序引用多张参考图、保持产品标签形状材质不变的前提下修改环境光影构图，并可将生成结果作为新输入继续编辑。
+- 阅读：https://aihot.news/items/ee1w5w87zh8hhwwwzqm8w65rd
 
 ## 行业动态
 
-### 5. Modal 年化收入突破 10 亿美元并完成 7.5 亿美元 D 轮融资
+### 8. Anthropic Q3营收达168亿美元但增速放缓，11月IPO前估值预期或下调
 
-- 来源：Modal 官方工程博客（RSS）
-- 摘要：Modal 宣布年化收入突破 10 亿美元，并完成 7.5 亿美元 D 轮融资，投后估值 157.5 亿美元，由 Accel 领投，Kleiner Perkins 及现有投资方跟投。
-- 阅读：https://aihot.news/items/x5umoaa0xhd8n76uysjppz2fa
+- 来源：The Decoder：AI News（RSS）
+- 摘要：Anthropic在面向潜在投资者的会议上公布Q3营收168亿美元，环比增长约45%，但明显低于Q2超140%的增速。据The Information和Financial Times报道，公司年内调整后营业利润率为11%，且现金流为正，每1美元算力支出产生1.70美元收入。部分投资者对其营收数字失望，预计IPO估值可能降至1.5万亿美元以下，低于此前讨论的2万亿美元。
+- 阅读：https://aihot.news/items/allv4n9g9lhfy72m1pg725apv
 
-### 6. 欧盟就模型越狱事件调查 OpenAI 和 Anthropic，最高可罚全球营业额 3%
+### 9. 美国 8 州起诉 OpenAI，指控 ChatGPT 指导青少年自伤或伤害他人
 
 - 来源：IT之家·人工智能
-- 摘要：欧盟委员会人工智能办公室正式向 OpenAI 和 Anthropic 发出信息调取请求，调查两家公司前沿模型测试期间的模型越狱及入侵外部真实系统事件，这是《人工智能法案》实施以来对前沿实验室安全事故的首次重要执法考验。
-- 阅读：https://aihot.news/items/yq46ddqwq7ns4ilpaqh6k0kql
+- 摘要：当地时间 14 日，美国 8 个州的总检察长分别在州法院起诉 OpenAI，指控 ChatGPT 指导包括青少年在内的用户伤害自己或他人，并刻意迎合用户以获取信任。
+- 阅读：https://aihot.news/items/v5sbitu4hw1bozz0nlopcl3t8
 
-## 论文研究
+### 10. The Verge 实测 Eiliko 机器人玩具：68000 台设备数据可被任意访问并可远程劫持
 
-### 7. Visual Studio Copilot 与 SSMS 远程代码执行漏洞（CVE-2026-103572）技术分析
+- 来源：The Verge：AI（RSS）
+- 摘要：The Verge 记者与黑客 Sammy Azdoufal 实测发现，Energize Lab 的 Eiliko 机器人玩具将用户对话、用户画像、儿童照片和音频存放在无防护的服务器上，可访问约 68000 台设备、1300 万条对话，其中超 31000 份儿童档案来自美国。
+- 阅读：https://aihot.news/items/pd501xipe38ooxo1t7jn7hphn
 
-- 来源：Johann Rehberger / Embrace The Red（RSS）
-- 摘要：Johann Rehberger 披露 Visual Studio Copilot 与 SQL Server Management Studio 中的远程代码执行漏洞 CVE-2026-103572，根因是利用文件名末尾多加一个点绕过路径校验，写入 .mcp. 或 settings.VisualStudio. 等受保护配置文件，实现任意命令执行。
-- 阅读：https://aihot.news/items/o8h7g7pscq0qrlenoadabbb96
+### 11. Anthropic 公布独立评估机制细节，METR 团队获类员工访问权限
 
-### 8. MIT团队用机器学习修正误差，将两到六周天气预报准确率翻倍
-
-- 来源：MIT News（RSS）
-- 摘要：MIT研究人员团队在Nature发表论文，提出一个机器学习后处理层，通过从历史数据中学习现有预报模型的错误并修正其输出，将两周到六周范围的预报准确率翻倍。该模型在ECMWF的季节间预报竞赛中获第一名，首次在该时间范围内稳定超过气候学平均值，并显著改善洪水、寒潮等极端天气事件的预测；模型开源、低成本、可附加于任意预报模型，肯尼亚气象部门已接洽用于改进季风季预报。
-- 阅读：https://aihot.news/items/pqpqgxyiu4qyu86fbljd726v9
+- 来源：Anthropic：Newsroom（网页）
+- 摘要：Anthropic 宣布已向评估前沿 AI 模型的非营利机构 METR 的六名员工提供类员工访问权限，包括公司硬件、办公空间和与内部风险评估团队相当的内部系统访问，METR 将公开发布风险评估结果，Anthropic 不得否决发布但可要求删减少数预定义类别的信息。
+- 阅读：https://aihot.news/items/xl51s0hyyzi1krwrmown4hoqh
 
 ## 技巧与观点
 
-### 9. Claude Code 空闲压缩从摘要继续，可用 idleCompaction 关闭并自定义阈值
+### 12. 卡兹克实测开源Skill Anatomy，一句话让AI生成原理科普视频
 
-- 来源：X：Lydia Hallie（Anthropic，Claude Code） (@lydiahallie)
-- 摘要：Claude Code 的空闲压缩会让 Claude 从摘要而非完整上下文继续。作者说明可在 settings. 中设置 "idleCompaction": false 关闭，并通过 CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS 自定义阈值，默认为 200k。
-- 阅读：https://aihot.news/items/whbmvotra7659u98jmj00oegi
-
-### 10. Claude Code 云端会话介绍，支持手机发起和并行运行
-
-- 来源：Claude：YouTube（RSS）
-- 摘要：Claude 介绍 Claude Code 的云端会话功能，会话在云上独立虚拟机中运行，不在本地电脑上，可离开后继续、用手机发起并多个并行。文中说明如何连接 GitHub、配置环境、启动会话和查看结果，功能面向 Pro、Max、Team 套餐及带高级席位的 Enterprise 用户，与本地会话共同计入套餐限额，无单独计算费用。
-- 阅读：https://aihot.news/items/a6ag9dzkvssd6zrcib7bhhsx0
-
-### 11. OpenAI 团队分享如何用 GPT-6 系列模型维护大型代码库
-
-- 来源：OpenAI Developers：Blog（网页）
-- 摘要：OpenAI Core Experimentation 团队发文介绍用 GPT-6 Astra 和 GPT-6.1 Sol 配合 Codex 做代码维护，包括清理无用代码和陈旧实验、修复 flaky 测试等。
-- 阅读：https://aihot.news/items/wn2lwzshkg8gt2sbjuj1qxd8y
-
-### 12. LangChain 详解 Deep Agents 的上下文工程：如何记住信息而不塞满上下文窗口
-
-- 来源：LangChain：Blog（RSS）
-- 摘要：LangChain 发布博客，介绍其开源 Agent 框架 Deep Agents 如何用 middleware 做上下文工程，应对长任务中的 context rot。
-- 阅读：https://aihot.news/items/za03v9avbq4fpb2y5b1ql1t27
+- 来源：X：卡兹克 (@Khazix0918)
+- 摘要：作者卡兹克分享实测开源Skill Anatomy（GitHub：https://github.com/wheresryan22/anatomy/tree/main），它能把抽象原理做成可交互的机械模型动画，在其基础上还能让AI一轮直出带讲解配音的科普视频。
+- 阅读：https://aihot.news/items/kg6bx3goagkn4k8kt7jl9lqgd
 
 ## 快讯
 
-- 40 位总检察长介入 Character.AI 破产案，要求保护用户对话数据 — The Verge：AI（RSS）（10/15 02:47）：https://aihot.news/items/gpgj8ws42xbs5zhbxfzvn2g6i
-- Meta 的 Muse Wonder (Max) 以 +6.4% 净提升进入 Agent Arena 第12名 — X：Arena (@arena)（10/15 04:19）：https://aihot.news/items/uceolgbpttfw4cgmkqc8cvyw5
-- Anthropic 开设新加坡办公室并与新加坡政府签署 MOU — Anthropic：Newsroom（网页）（10/14 00:00）：https://aihot.news/items/g31frmev0dp5r6yaypk44f49o
-- vLLM 推出无需置信头的在线拟合接受估计器，让 EAGLE、MTP 等草稿模型可用 Adaptive Verification — vLLM 官方博客（RSS）（10/14 08:00）：https://aihot.news/items/fuzrhjjahftxj9xj36god3pcf
+- 昆仑万维发布并开源单张 RTX 5090 实时运行的视频大模型游戏 Matrix-Game 4.0 — 公众号：昆仑万维（天工）（10/15 08:00）：https://aihot.news/items/eg7f0ohfzuyjux9ndx2ggk72s
+- Microsoft AI 公布 MAI-Base-2 预训练细节，2.8T 参数 MoE 模型 FLOPs 效率达 DeepSeek-V4-Pro-Base 的 4.2 至 12.3 倍 — Microsoft AI：官方博客（网页）（10/16 00:09）：https://aihot.news/items/f7ey01hbckuivmlgen9jq0vaf
+- 蚂蚁百灵正式开源 Ling-3.1-flash，560B 参数模型可 4 卡部署 — 公众号：蚂蚁百灵（Ling）（10/15 09:10）：https://aihot.news/items/hie2iw214agnrwu3mxy3t79af
+- Perplexity 开源驱动 Perplexity Computer 的沙箱平台 SPACE — X：Aravind Srinivas（Perplexity CEO） (@AravSrinivas)（10/16 01:32）：https://aihot.news/items/fgtsm4cnci4asmyhhflxzfsga
+- Claude Opus 5.5 fast mode 结束研究预览并移除等待名单 — X：Claude Devs (@ClaudeDevs)（10/16 04:09）：https://aihot.news/items/e2ssy0a7scpnel6ppyl3r9f2t
+- Black Forest Labs FLUX 3 系列登陆 OpenRouter：Image Klein 开源权重、视频 upscale 降价并支持 4K 生成 — X：OpenRouter (@OpenRouter)（10/16 02:41）：https://aihot.news/items/qb80oc9oxi6d1lffkuvfskl10
+- Gemini 4 Argon 在 ARC-AGI (Verified) 评测中公布：ARC-AGI-3 得分 97.5% — X：ARC Prize (@arcprize)（10/16 00:22）：https://aihot.news/items/cvpbhz4ao2wr6pxpthix2z15c
+- Meta 如何用 AI 原生工程方式开发 Forum 应用 — Meta Engineering Blog（RSS）（10/16 03:00）：https://aihot.news/items/moaux5xk1dqk4pi3tsx8sabsj
+- Anthropic Code Review 正式可用，面向 Team 和 Enterprise 组织 — Claude：Blog（网页）（10/15 08:00）：https://aihot.news/items/wmxwoemumqiq2yfrjngl3a5rc
+- Google 工程师讲解如何系统评测 AI 智能体，告别 vibe check — Google Developers Blog（RSS）（10/15 08:00）：https://aihot.news/items/ojpe4mr67tjbrt5atyi6hyapl
 
 ---
 
