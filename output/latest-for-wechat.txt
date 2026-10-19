@@ -1,32 +1,38 @@
-# AI HOT 日报 - 2026年10月18日星期日
+# AI HOT 日报 - 2026年10月19日星期一
 
 > 数据来自 AI HOT（https://aihot.virxact.com），链接优先指向站内中文阅读页。
 
 ## 今日主线
 
-**DeepSeek-V4.1-Flash-1017 发布，多基准成绩提升且 API 价格不变**
+**Anthropic 内部研究显示初级技术岗位占比下降，AI Agent 工时达员工六倍**
 
-DeepSeek 将 V4.1 Flash 升级至 DeepSeek-V4.1-Flash-1017，网页端与 APP 同步更新，API 调用方式与价格不变，仍用 deepseek-flash 访问。
+Anthropic 发布内部研究称，技术部门初级岗位占比从 2025 年初的 21% 降至 14%，新招初级占比从 27% 降至 9%，空缺初级职位降至 6%，非技术部门基本稳定。
 
-## 模型发布/更新
+## 行业动态
 
-### 1. DeepSeek-V4.1-Flash-1017 发布，多基准成绩提升且 API 价格不变
+### 1. Anthropic 内部研究显示初级技术岗位占比下降，AI Agent 工时达员工六倍
 
-- 来源：DeepSeek：API 更新日志
-- 摘要：DeepSeek 将 V4.1 Flash 升级至 DeepSeek-V4.1-Flash-1017，网页端与 APP 同步更新，API 调用方式与价格不变，仍用 deepseek-flash 访问。
-- 阅读：https://aihot.news/items/w34qm27sedtziwxig5ub9wwhr
+- 来源：The Decoder：AI News（RSS）
+- 摘要：Anthropic 发布内部研究称，技术部门初级岗位占比从 2025 年初的 21% 降至 14%，新招初级占比从 27% 降至 9%，空缺初级职位降至 6%，非技术部门基本稳定。
+- 阅读：https://aihot.news/items/c7pt5mbzh5h0atlbprfzbs8o0
 
-## 产品发布/更新
+### 2. 德国两家法院先后裁定 Google 须为其 AI Overview 内容负责
 
-### 2. DeepSeek 开放自研搜索 API
+- 来源：The Decoder：AI News（RSS）
+- 摘要：慕尼黑地区法院 I 五月底裁定 Google 的 AI 搜索摘要属于公司自己的陈述而非中立转述，Google 须为错误内容担责；Google 公开宣布上诉后实际以和解结案，未获上级法院裁决。
+- 阅读：https://aihot.news/items/bbr25r9mbi8zbbtmu2uiati7f
 
-- 来源：DeepSeek：API 更新日志
-- 摘要：DeepSeek 开放自研搜索 API，底层由 AI 原生的 DeepSeek 搜索引擎提供，每天稳定处理数亿次搜索请求。该引擎索引全球千亿级网页、支持多语言，并通过识别机制过滤 SEO 作弊、GEO 操纵和低质 AIGC，使用方式见网页搜索与抓取指南。
-- 阅读：https://aihot.news/items/x7hxr1lvyddc8hrbrugfx4uyg
+## 技巧与观点
+
+### 3. Browser Use 讲解浏览器智能体的工作原理与使用时机
+
+- 来源：Browser Use
+- 摘要：Browser Use 发布科普文章，讲解浏览器智能体由模型、harness 和浏览器三部分组成，通过观察页面、选择动作、执行并检查结果的循环完成任务，可通过 DOM、无障碍树或截图读取页面。
+- 阅读：https://aihot.news/items/w3vpc68lufgj57zcy1hd38a60
 
 ## 快讯
 
-- 卡兹克实测37999元RTX Spark轻薄本：一周实现本地Token自由 — 公众号：数字生命卡兹克（10/17 18:19）：https://aihot.news/items/ffpkck4k06le4smuaz4slhvcz
+- DeepSeek-V4.1-Flash-20261017 登顶 Code Arena: WebDev 开源模型榜首 — X：Arena (@arena)（10/19 02:56）：https://aihot.news/items/bm95oliei5mcgy2tau7e22d59
 
 ---
 
