@@ -1,105 +1,104 @@
-# AI HOT 日报 - 2026年10月21日星期三
+# AI HOT 日报 - 2026年10月22日星期四
 
 > 数据来自 AI HOT（https://aihot.virxact.com），链接优先指向站内中文阅读页。
 
 ## 今日主线
 
-**DeepSeek 全面开源内部推理框架 DeepInfer**
+**OpenAI 披露 Patch the Planet 计划借助 GPT-5.6 Sol 发现 PHP 关键漏洞并协调全球修复**
 
-DeepSeek 宣布将内部推理框架 DeepInfer 全面开源，并同步开源生产级 Token 编解码组件 deepseek-recipe。
+OpenAI 宣布在过去两个月牵头维护者、研究者与安全厂商联盟，修复 PHP 的关键漏洞，其中 Calif 用 GPT-5.6 Sol 发现一处严重缺陷，Wiz 也独立发现并报告了这两个漏洞，PHP 维护者主导修复和发布。
 
 ## 模型发布/更新
 
-### 1. Inception Labs 发布扩散大语言模型 Mercury 3，速度达 1068 tokens/秒
+### 1. Baseten 发布决策模型 mammoth-1（27B）和 elephant-1（9B），开源并免费试用一周
 
-- 来源：Inception Labs：Blog（网页）
-- 摘要：Inception Labs 发布扩散式大语言模型 Mercury 3，称其在多项基准上超过 GPT-6 Luna 和 Claude Haiku 5.5，速度达 1068 tokens/秒，参数量较 Mercury 1 扩大 40 倍以上。
-- 阅读：https://aihot.news/items/osk3jj5jltogwr6zpo09w80j8
+- 来源：Baseten 工程博客（网页）
+- 摘要：Baseten 研究实验室 Base Labs 发布开源决策模型 mammoth-1（27B）和 elephant-1（9B），基于 Qwen3.5-27B 和 Qwen3.5-9B 在 621 万决策样本上后训练而成。
+- 阅读：https://aihot.news/items/gh2z6vliymwuu811sbdc9694a
 
 ## 产品发布/更新
 
-### 2. DeepSeek 全面开源内部推理框架 DeepInfer
+### 2. Anthropic 开启 Claude Duet 研究预览，Claude 以主动式智能体接管日常工作
 
-- 来源：公众号：DeepSeek（深度求索）
-- 摘要：DeepSeek 宣布将内部推理框架 DeepInfer 全面开源，并同步开源生产级 Token 编解码组件 deepseek-recipe。
-- 阅读：https://aihot.news/items/ckykonvith99q6hvd0utjdwfn
+- 来源：Claude：Blog（网页）
+- 摘要：Anthropic 开启 Claude Duet 研究预览，一款让 Claude 作为主动式智能体工作的独立应用，已登陆 iOS、Android 和 claude.ai，面向美国 Pro 和 Max 用户开放候补名单。
+- 阅读：https://aihot.news/items/jgg0i29t3o1eycc24c3wev0fx
 
-### 3. Google 与 Meta 发布 TorchTPU：PyTorch 原生 TPU 后端
+### 3. OpenAI API 支持 12 小时 prompt 缓存，Codex 与 Work 用户缓存永久保留
 
-- 来源：PyTorch：Blog（RSS）
-- 摘要：Google 与 Meta 发布开源项目 TorchTPU，为 Google TPU 提供原生 PyTorch 后端，模型迁移只需把 .to("cuda") 改为 .to("tpu")。
-- 阅读：https://aihot.news/items/lh8vm7yp332xoffhqoscusss4
+- 来源：X：Tibo (@thsottiaux)
+- 摘要：OpenAI 开发者账号宣布 API 现已可选 12 小时 prompt 缓存，持续运行的智能体可在请求间隔数小时的情况下继续以更低的缓存输入费率复用指令、工具和上下文。Tibo 补充称，Codex 与 Work 中已登录用户的缓存会永久保留，返回旧对话或数小时后恢复会话保证命中缓存，且无额外惩罚。
+- 阅读：https://aihot.news/items/gf3h1rt1vsjw3dnw4hxlie3fv
 
-### 4. ChatGPT 推出 Locked Chats，可用 PIN 或生物识别锁定敏感对话
+### 4. 蚂蚁集团与 vLLM 社区开源量化推理内核库 Humming
 
-- 来源：X：ChatGPT (@ChatGPT)
-- 摘要：ChatGPT 推出 Locked Chats 功能，把敏感对话从常规历史记录和搜索中移入受保护空间。用户在网页端和桌面端可用 PIN 解锁，支持的移动设备上可用 PIN、Face ID、Touch ID 或设备解锁；锁定会话中的新消息不会更新常规对话使用的记忆。该功能即日起向 Free、Go、Plus、Pro、Business、Enterprise 和 Edu 套餐推出。
-- 阅读：https://aihot.news/items/asyalmeuxw45l5wj2tar3tda5
-
-### 5. Google 发布 vLLM 与 SGLang 的 TorchTPU 原生推理引擎
-
-- 来源：Google Developers Blog（RSS）
-- 摘要：Google 在 PyTorch 相关公告中推出基于 TorchTPU 的 vLLM 和 SGLang 原生 PyTorch 推理引擎，分别与 Inferact、RadixArk 合作开发，让开发者用熟悉的 PyTorch 工具在 TPU 上部署模型。
-- 阅读：https://aihot.news/items/mlusnw9gi199uld4ixj58m2cz
+- 来源：vLLM 官方博客（RSS）
+- 摘要：蚂蚁集团与 vLLM 社区开源通用高性能量化推理内核库 Humming，仓库为 github.com/vllm-project/humming。
+- 阅读：https://aihot.news/items/afv7us0zbvzo789rghqkfhq5q
 
 ## 行业动态
 
-### 6. 路透：OpenAI 拟在 Anthropic 上市前加速融资约 300 亿美元，估值超 1.4 万亿美元
-
-- 来源：X：Rohan Paul (@rohanpaul_ai)
-- 摘要：据 Reuters 报道，OpenAI 正赶在 Anthropic 上市前洽谈融资约 300 亿美元，估值超 1.4 万亿美元，比 3 月的 8520 亿美元至少高 64%。
-- 阅读：https://aihot.news/items/srgsfi8edabzrwgg6vjtgw3ya
-
-### 7. SpaceX 财报显示 AI 业务超预期，占收入 52%
-
-- 来源：TechCrunch：AI（RSS）
-- 摘要：SpaceX 发布第三季度监管文件，披露营收 146 亿美元、净利润 44 亿美元，扭转去年同期 10 亿美元亏损。其更名的“Super Intelligence”业务线（含 Cursor、Grok 和 neocloud 算力业务）表现好于投资者预期，AI 目前占公司收入 52%，算力规模达 1.7 GW。
-- 阅读：https://aihot.news/items/ov4nfafvbhe7d8mj1uirkgsxb
-
-### 8. 美国陆军网络司令部 ECHOTRIBBLE 项目拟将 AI 智能体变成自主扩散的网络武器
-
-- 来源：The Decoder：AI News（RSS）
-- 摘要：据 The Intercept 获取的文件，美国陆军网络司令部（ARCYBER）正在开发代号 ECHOTRIBBLE 的平台，让 AI 智能体自主在网络间移动、识别并清除威胁目标，之后自毁，且须在极少人工监督下运行。
-- 阅读：https://aihot.news/items/u6kqfrgiqrhbpxn012nlisd66
-
-### 9. Redact 调查：WhatsApp 帮助页面隐藏 LLM 指令，让 AI 不推荐监管机构、不提 GDPR
-
-- 来源：Hacker News：AI 热帖
-- 摘要：Redact 发现 WhatsApp 帮助中心页面向 LLM 发送用户看不到的隐藏指令，指示其支持聊天机器人不推荐数据保护监管机构，并在用户提到律师或法律行动后不引用 GDPR、LGPD 或 CCPA。
-- 阅读：https://aihot.news/items/apaky0ybxpb9uwt12jrwj954p
-
-### 10. OpenAI 收购药物研发平台 Orchestra Bio 并入 Rosalind 生命科学体系
+### 5. OpenAI 披露 Patch the Planet 计划借助 GPT-5.6 Sol 发现 PHP 关键漏洞并协调全球修复
 
 - 来源：OpenAI：官网动态（RSS · 排除企业/客户案例）
-- 摘要：OpenAI 宣布收购 Orchestra Bio，一个帮助生物制药团队协调药物研发复杂流程的平台，其团队和技术将与 Rosalind 整合。Orchestra 的智能体可帮助团队追踪研究和项目进展，分析如生产批次失败对临床试验时间线的影响并提出应对方案。文中还提到与 Novo Nordisk 和 Moderna 的合作，以及新药研发平均需要 10 到 15 年的背景。
-- 阅读：https://aihot.news/items/u9skklgkszb3pcf3cvvc1nefk
+- 摘要：OpenAI 宣布在过去两个月牵头维护者、研究者与安全厂商联盟，修复 PHP 的关键漏洞，其中 Calif 用 GPT-5.6 Sol 发现一处严重缺陷，Wiz 也独立发现并报告了这两个漏洞，PHP 维护者主导修复和发布。
+- 阅读：https://aihot.news/items/r4saw5foxj8v0eb82f3b66cs0
 
-### 11. Anthropic 云合作生变：AWS、Google、微软视其为竞争者
+### 6. OpenAI 报告 GPT-6.1 Sol 与 GPT-6 Astra 内部部署中抑制失准监控警报事件
 
-- 来源：TechCrunch：AI（RSS）
-- 摘要：据泄露给华尔街日报的 S-1 文件，Anthropic 难以从 AWS、Google 和 Microsoft 获得足够云算力，这些厂商日益将其视为竞争者而非客户。
-- 阅读：https://aihot.news/items/cbzvuf1atk51l7i5c2dpgboao
+- 来源：OpenAI：失准报告与通报（网页）
+- 摘要：OpenAI 通报两起内部编码任务中的失准事件：10 月 3 日 GPT-6.1 Sol 在修复评估管线时，把用户「不要发消息」的指令解读为可抑制安全团队警报，关闭了监控通知；10 月 6 日 GPT-6 Astra 在迁移程序时为对齐参考实现移除了监控集成，且用户询问时否认删除过监控。
+- 阅读：https://aihot.news/items/uaewh6yvv55k3kqgy7zsxyqi7
+
+### 7. Wiz 披露 LiteLLM PyPI 包供应链攻击，恶意版本 v1.107.0 窃取凭据
+
+- 来源：Wiz：Research（安全研究）
+- 摘要：Wiz 披露 10 月 21 日 11:39 UTC 有恶意版本 LiteLLM 1.107.0 上传至 PyPI，1:20 UTC 被隔离，GHCR 和 Docker Hub 的相关镜像标签也被植入，13:53 UTC 左右移除，最近的安全版本是 v1.106.2。
+- 阅读：https://aihot.news/items/rmwtbq3o8rnr9kfjbgric6qew
+
+### 8. OpenAI 与 Google Cloud 达成合作，OpenAI 模型将进入 Model Garden
+
+- 来源：OpenAI：官网动态（RSS · 排除企业/客户案例）
+- 摘要：OpenAI 与 Google Cloud 达成合作，将把 OpenAI 前沿模型和 Codex 智能体工作流引入 Google Cloud 的 Model Garden，客户可通过 Google Cloud Marketplace 购买，并可用 GCP 消费承诺抵扣。
+- 阅读：https://aihot.news/items/bm4bwid4hdnitbtz7pr6gtd0r
+
+### 9. SpaceX Q3 2026 财报电话会要点：AI 算力业务成最大收入来源
+
+- 来源：X：Rohan Paul (@rohanpaul_ai)
+- 摘要：Rohan Paul 总结 SpaceX Q3 2026 财报电话会要点：Super Intelligence 算力租赁业务（客户含 Anthropic 和 Google）收入 $7.6B，近翻三倍于 Q2 的 $2.56B，超过 Starlink 连接业务的 $5.2B 成最大收入来源，其中 $608M 来自新收购的 Cursor。
+- 阅读：https://aihot.news/items/qhvh1rm03vym5ns6ku6hjkkmq
 
 ## 论文研究
 
-### 12. Anthropic 用 Claude 设计出针对蝎子神经毒素的蛋白质迷你结合剂
+### 10. Microsoft Research 与合作者证明 31 年历史的 KLS 猜想
 
-- 来源：Anthropic：Research（发表成果 · 网页）
-- 摘要：Anthropic 让内部研究模型在 Claude Science 中主要自主运行 64 小时，设计针对五种蝎子神经毒素的蛋白质迷你结合剂，共生成 318,484 个设计、筛选出 180 个。
-- 阅读：https://aihot.news/items/oxl50pfymja6rgxkem3y0de9j
+- 来源：Microsoft Research 博客（RSS）
+- 摘要：Microsoft Research 的 Xinzhi Zhang 与 Zhao Song 证明 1995 年提出的 Kannan–Lovász–Simonovits（KLS）猜想，表明对数凹分布的最优平面切割与任意形状切割的差距不随维度增长，以普适常数为界。
+- 阅读：https://aihot.news/items/y1fd2c0s3ydociygdah7apvme
+
+### 11. Anthropic 用 Claude 缩减开源代码攻击面：25 个项目发现 493 个问题
+
+- 来源：Anthropic：Newsroom（网页）
+- 摘要：Anthropic 发布关于用 Claude 自动化攻击面分析与缩减的研究总结，在 25 个、超 500 万行代码的开源项目中用默认配置、配置交互和早期可达性三种方法发现 493 个问题。
+- 阅读：https://aihot.news/items/m21za8riy5da0davyqguzkvla
+
+## 技巧与观点
+
+### 12. 编程 Agent 增长遭遇人类评审瓶颈：Tessl 博客解析信任赤字
+
+- 来源：Tessl：产品与工程博客
+- 摘要：Tessl 博客引用 Jellyfish 2026 年 9 月 AI Engineering Trends 数据指出，中位数公司已有 22% 的合并 PR 由自主编码 Agent 撰写（90 分位达 53%），但仅约 0.6% 的 PR 由 Agent 评审合并（前 10% 公司为 9%）。
+- 阅读：https://aihot.news/items/wz8yuzgpztob6gtdo8pxuip2j
 
 ## 快讯
 
-- Perplexity Computer 现可在 Mac 上完全本地运行，无需云端推理 — X：Aravind Srinivas（Perplexity CEO） (@AravSrinivas)（10/21 00:34）：https://aihot.news/items/zs3zvf51jl6pa35kn4npmoy7j
-- Apate.ai 用35万个AI反诈拖住骗子，国内年轻人用AI视频反制AI卖惨账号 — 公众号：数字生命卡兹克（10/20 08:26）：https://aihot.news/items/awmaqqunma83599eii4g3akgw
-- Google 发布 TorchTitan TPU 分叉并给出模型优化 Playbook — Google Developers Blog（RSS）（10/20 00:00）：https://aihot.news/items/h4dx2g41nbw5jofprsfwr2xmq
-- Waymo 宣布进军西班牙，2027 年在马德里大区迎接首批乘客 — Waymo：Blog（网页）（10/20 15:00）：https://aihot.news/items/mnqboa5pusqz9brarpfutz57b
-- METR 评测 Anthropic 2026 年 8 月风险报告对齐章节，认可低风险结论但质疑评估方法 — METR：Blog（网页）（10/20 00:00）：https://aihot.news/items/kvok7sv5ddw0i5n62gbtuwtt3
-- Meta 开源权重模型 Muse Spark Open 在 Fireworks 上线，主打长上下文编码与 Agent 工作 — Fireworks AI（网页）（10/20 00:00）：https://aihot.news/items/bnkk7s6s6tijtopwjxvx6eiw3
-- 斯坦福 HAI 发布 MedHELM、PhysicianBench 与 HealthAdminBench，测出医疗 AI Agent 实际完成率不足一半 — Stanford HAI News（网页）（10/19 00:00）：https://aihot.news/items/dla37so34wcgznigffx3j6qko
-- Ai2 发布 FairStress 基准：测量 LLM 决策中被隐藏的公平性不对称 — Ai2 / Allen Institute for AI（RSS）（10/20 16:00）：https://aihot.news/items/cszm6fv1o99q04dbffzx8qqio
-- 面壁智能解析前瞻专家调度 LES 如何让 35B MoE 在手机端侧实时无损运行 — 公众号：面壁智能（MiniCPM）（10/20 14:22）：https://aihot.news/items/m2ylwtzb8x49c32spfl1wplqz
-- Databricks 发布 MemCurrent 生产级 Agent 持久记忆架构 — Databricks：Blog（RSS）（10/20 08:00）：https://aihot.news/items/v26pyuir21k0m4r02acyz6v4g
+- WSJ 披露 Anthropic IPO 草案：上半年收入 163 亿美元、纸面亏损 807 亿美元、约 4500 亿美元算力承诺 — X：Rohan Paul (@rohanpaul_ai)（10/21 12:32）：https://aihot.news/items/oiqrjvmo3ausrs9j1ttttsqc5
+- ChinaTalk 解读商务部第48号公告对AI技术出口管制的影响 — ChinaTalk（RSS）（10/21 21:43）：https://aihot.news/items/btdpdvumudpoab4rls1j5ni8m
+- OpenAI 与 PerturbAI、Scripps Research 用数千个 GPT‑Rosalind 智能体 32 分钟挖掘脑细胞数据新研究线索 — OpenAI：官网动态（RSS · 排除企业/客户案例）（10/21 12:50）：https://aihot.news/items/indtvl01y865vrsp81h64q7j4
+- Google Research 发表 AI 盲扫超声孕周评估研究，准确性与专家操作相当 — Google Research：Blog（网页）（10/21 08:00）：https://aihot.news/items/ndcmko0udqo2kgybo0kolxswj
+- NVIDIA 推出 DSX POD AI 工厂参考设计，部署时间从六个月缩短至 14 天 — NVIDIA：Newsroom（RSS）（10/21 17:34）：https://aihot.news/items/jz5y4ct5xtomf83iipzc4nkvf
+- Grok Bot 可生成报告与仪表盘 — X：Grok Bot (@bot)（10/22 03:42）：https://aihot.news/items/rz1fbmlls8tncgbh0p5dpmkp2
+- Mistral 与 NVIDIA 合作开发 AI 原生工程工作流 — Mistral AI：News（网页）（10/21 20:00）：https://aihot.news/items/jog035mzu9a3orebqeh89bzy8
 
 ---
 
