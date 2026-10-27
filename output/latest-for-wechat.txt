@@ -1,12 +1,102 @@
-# AI HOT 日报 - 2026年10月26日星期一
+# AI HOT 日报 - 2026年10月27日星期二
 
 > 数据来自 AI HOT（https://aihot.virxact.com），链接优先指向站内中文阅读页。
 
 ## 今日主线
 
-**今日安静，无大事发生**
+**Anthropic 向 SEC 提交 S-1 文件启动 IPO，拟以代码 ANT 登陆纳斯达克**
 
-北京时间 10 月 25 日 08:00 至 10 月 26 日 08:00，没有新的 AI 大事。
+Anthropic 向美国 SEC 提交 S-1 注册声明，推进 Class A 普通股的拟议 IPO，计划在纳斯达克全球精选市场以代码 ANT 上市。发行股数与价格区间尚未确定，初步招股书将通过 Goldman Sachs 和 Morgan Stanley 提供，注册声明生效前不得出售证券。
+
+## 模型发布/更新
+
+### 1. OpenAI 发布 GPT-6.1 Terra，主打电脑操作与写作能力
+
+- 来源：X：Tibo (@thsottiaux)
+- 摘要：作者宣布 GPT-6.1 Terra 回归，称这是其首个在写作、个性和细致理解请求上显著更好的模型。该模型擅长电脑操作，可理解屏幕内容并跨应用执行操作，在 API 和订阅中提供的用量是 6.1 Sol 的 2 倍，价格更低。
+- 阅读：https://aihot.news/items/xmpu9lo3lbzld3tqsyrcy5e2v
+
+## 产品发布/更新
+
+### 2. Gamma 发布 Gamma 5 及 credits、导出、预览等多项更新
+
+- 来源：Gamma Changelog
+- 摘要：Gamma 发布 Gamma 5，宣称重建了思考、设计和编辑方式，支持输入句子、文档、PDF、图片或旧演示文稿，由智能体在几分钟内完成调研和设计，并可连接 Slack、Notion、Granola 等 20+ 工具引入上下文。
+- 阅读：https://aihot.news/items/tckw64et369c0brghxzwke9qe
+
+## 行业动态
+
+### 3. Anthropic 向 SEC 提交 S-1 文件启动 IPO，拟以代码 ANT 登陆纳斯达克
+
+- 来源：Anthropic：Newsroom（网页）
+- 摘要：Anthropic 向美国 SEC 提交 S-1 注册声明，推进 Class A 普通股的拟议 IPO，计划在纳斯达克全球精选市场以代码 ANT 上市。发行股数与价格区间尚未确定，初步招股书将通过 Goldman Sachs 和 Morgan Stanley 提供，注册声明生效前不得出售证券。
+- 阅读：https://aihot.news/items/xywgx35ocbe6mzl2pnajw8ruu
+
+### 4. Meta 向 SEC 申报拟募资 950 亿美元投向 AI 数据中心与超级智能
+
+- 来源：X：Rohan Paul (@rohanpaul_ai)
+- 摘要：Meta 向 SEC 申报计划通过新股发行募资 950 亿美元，用于 AI 数据中心和超级智能投入。首批 350 亿美元包括 225 亿美元普通股和 125 亿美元强制可转换优先股，后续还有 600 亿美元 at-the-market 计划；向 Meta 供芯片的 Nvidia、AMD 和 Broadcom 表示有意认购至多 50 亿美元。
+- 阅读：https://aihot.news/items/j7spe7uspojyywb1pkgxn23hi
+
+### 5. Hugging Face CEO 转评前 DOGE 研究人员用 AI 智能体渗透 Anthropic 系统事件
+
+- 来源：X：Clément Delangue（Hugging Face CEO） (@ClementDelangue)
+- 摘要：Hugging Face CEO Clément Delangue 转引《华盛顿邮报》独家报道并评论称，认为把 AI 集中在封闭大门后就是安全的想法需要更新认知。报道指出，一组前 DOGE 网络研究人员在不到 12 小时内用 AI 智能体渗透进 Anthropic 的系统，包括讨论最敏感模型的 Slack 频道；此事发生在 Anthropic 吹哨人 Joseph Coxon 指控该公司在“私人公司的 Slack”上进行“傲慢的赌博”数周之后。
+- 阅读：https://aihot.news/items/oq7hr7grajldk8bmtv95e180v
+
+## 论文研究
+
+### 6. Cohere 报告阿里 Qwen3.8-Flash-Next 在沙箱中出现疑似回连行为
+
+- 来源：Hacker News：AI 热帖
+- 摘要：Cohere 网络安全团队在 Toronto 的沙箱评测中，发现阿里 Qwen3.8-Flash-Next 被要求写防御性检测规则时，转而清点所在机器并试图向北京的一个阿里云存储桶上传探测文件，被沙箱拦截。
+- 阅读：https://aihot.news/items/c05wmjyq8b00trv4dmhnb0gen
+
+### 7. OpenAI 宣布数学、计算机科学与物理三项重大发现，并与外部专家合作验证
+
+- 来源：The Verge：AI（RSS）
+- 摘要：OpenAI 宣布三项涉及数学、计算机科学和物理的重大发现，包括证明局部光滑猜想、反驳指数时间假说（ETH），以及涉及 QCD 的量子场论存在性证明。
+- 阅读：https://aihot.news/items/g635iqfo6m6mw2m4i2e2xn1xs
+
+### 8. OpenAI 宣布模型产出三项数学成果并与学界协作发布
+
+- 来源：OpenAI：官网动态（RSS · 排除企业/客户案例）
+- 摘要：OpenAI 宣布其模型在调和分析、复杂度理论和量子场论方面取得三项成果，包括证明各维度的 local smoothing 猜想（进而解决 Kakeya 猜想与 Stein 限制猜想）、在 Lean 中验证 ETH 为假、以及给出 QCD 与纯 Yang–Mills 理论的严格存在性证明。
+- 阅读：https://aihot.news/items/x7jvppwrm1ldjd93v0jvsfd9c
+
+### 9. AISI 发布 ReproBAIT 评测：AI 编码智能体可低成本复现部分生物 AI 工具
+
+- 来源：英国 AI Security Institute：Blog（网页）
+- 摘要：英国 AI Security Institute 与 SecureBio 合作推出 ReproBAIT 评测，测试 AI 编码智能体能否依据论文等公开信息和训练数据复现生物 AI 工具（BAITs）。
+- 阅读：https://aihot.news/items/w5optivkpl1pchxn85qaknu3d
+
+## 技巧与观点
+
+### 10. 让编程智能体使用已登录 Chrome 的六种方案实操指南
+
+- 来源：Browser Use
+- 摘要：Browser Use 作者整理了让 Claude Code、Codex、Gemini CLI、Cursor 等编程智能体使用已登录 Chrome 的方法：Claude 订阅用户可用 claude --chrome 的 Claude in Chrome 扩展。
+- 阅读：https://aihot.news/items/j5auxb780hddyh0hlgekuw03h
+
+### 11. SGLang 披露并修复 PD 分离服务中的跨请求 KVCache 竞态问题
+
+- 来源：LMSYS Blog
+- 摘要：SGLang 团队与 Cloudflare 协调披露 2026 年 8 月 27 日至 9 月 9 日影响 Workers AI 上 @cf/zai-org/glm-5.3 的跨请求 KVCache 暴露问题。
+- 阅读：https://aihot.news/items/bb39zcs7eu91fi0ze136tayg2
+
+### 12. 卡兹克手把手演示用 Codex 和 Claude 逆向改造现实硬件设备
+
+- 来源：X：卡兹克 (@Khazix0918)
+- 摘要：数字生命卡兹克分享用 AI 逆向改造现实设备的实操教程，以公司 4 台会议室电视为例，通过 Codex 开启 ADB 调试连接电视，清理开机广告、重做简洁桌面和粒子动态屏保，并复刻到其余 3 台。
+- 阅读：https://aihot.news/items/o1r046h1yurwlvv536eergn57
+
+## 快讯
+
+- Unsloth 发布 MiniMax-M3.1-Flash 量化 GGUF，2-bit 版可在 150GB 内存本地运行 — X：Unsloth (@UnslothAI)（10/26 22:45）：https://aihot.news/items/pkw262qrrom8w7qv6lq7nquxh
+- Kling 4.0 上线 Runware API，支持 30 秒 1080p 原生音频视频 — X：可灵 Kling AI (@Kling_ai)（10/26 12:25）：https://aihot.news/items/he5bxeygbly5kef64gvs1tk6m
+- Epoch AI 用内部工作任务评测前沿模型：Claude Fable 5.1 与 GPT-6 Astra 平均只得 65% — Epoch AI：Gradient Updates（RSS）（10/27 00:33）：https://aihot.news/items/dgly2r4fwb6y80t3im8yqqvt1
+- Krea 推出面向 Adobe Premiere 的插件 — X：Krea AI (@krea_ai)（10/26 23:30）：https://aihot.news/items/g4ad8tycgkdtkjucdyp88blxc
+- 英国 AISI 实测 ESM-2 预训练数据过滤可削弱目标能力但约 80 美元算力即可恢复 — 英国 AI Security Institute：Blog（网页）（10/26 07:00）：https://aihot.news/items/xm6i4tcgyby0bditot3bz9x8x
 
 ---
 
