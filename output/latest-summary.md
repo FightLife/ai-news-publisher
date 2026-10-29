@@ -1,105 +1,104 @@
-# AI HOT 日报 - 2026年10月28日星期三
+# AI HOT 日报 - 2026年10月29日星期四
 
 > 数据来自 AI HOT（https://aihot.virxact.com），链接优先指向站内中文阅读页。
 
 ## 今日主线
 
-**Anthropic 招股书拆解：IPO 计划募资约 1000 亿美元背后的 11 个细节**
+**Google DeepMind 发布 Gemini 4 Carbon 前沿模型**
 
-作者总结 Anthropic IPO 招股书的 11 个细节，计划募资约 1000 亿美元、估值或达 1.5万亿～2万亿。收入五个季度涨 30 倍，今年二季度经营利润首次转正 9.74 亿美元，但上半年净亏 807 亿美元，主要来自可转换票据公允价值变动；调整后净利润为正 26.71 亿美元。
+Google DeepMind 发布 Gemini 4 Carbon，定位为最强前沿模型，主打网络安全与长程智能体能力，在 SEC-bench Pro 88.2%、ExploitGym 54.8%、CWE-bench 71.0% 取得领先，并以 59 分登顶 Artificial Analysis Intelligence Index v5.0。
 
 ## 模型发布/更新
 
-### 1. Google DeepMind 发布实时交互世界模型 Genie 4
+### 1. Google DeepMind 发布 Gemini 4 Carbon 前沿模型
 
 - 来源：Google DeepMind：Blog（RSS）
-- 摘要：Google DeepMind 发布世界模型 Genie 4，主打实时交互模拟、更强照片级真实感，并首次在实时世界模型中原生生成音频，包括环境声和可实时交互的人物对话。
-- 阅读：https://aihot.news/items/l74eacnb38ytvm5hm8om7h7cs
+- 摘要：Google DeepMind 发布 Gemini 4 Carbon，定位为最强前沿模型，主打网络安全与长程智能体能力，在 SEC-bench Pro 88.2%、ExploitGym 54.8%、CWE-bench 71.0% 取得领先，并以 59 分登顶 Artificial Analysis Intelligence Index v5.0。
+- 阅读：https://aihot.news/items/fjeloaahylonpc0pv5tduusud
 
-### 2. Liquid AI 发布 LFM3 多模态模型家族，主打专用智能与端侧部署
+### 2. 面壁智能发布并开源 MiniCPM-OCR 系列：1.3B 解析模型与 2B 判别模型
 
-- 来源：Liquid AI 模型与工程博客（网页）
-- 摘要：Liquid AI 发布新一代 Liquid Foundation Models 家族 LFM3，首个版本包含六款约 2B 参数的模型，覆盖文本、视觉、音频、omni 和决策模态，全部基于 LFM3-1.7B-Base，预训练使用 22T tokens。
-- 阅读：https://aihot.news/items/vx4t4ldzajj3lhb8luhg9dy9s
+- 来源：公众号：面壁智能（MiniCPM）
+- 摘要：面壁智能发布并开源 MiniCPM-OCR 系列。MiniCPM-OCR 1.0（1.3B）在 Real5-OmniDocBench 取得 93.68 分、OCRBench v2 取得 54.7 分的 SOTA，经 DSpark 加速后吞吐达 1.217 页/秒，端到端效率提升 55%。
+- 阅读：https://aihot.news/items/zd8g1y3609zl72lnwis70owqt
 
 ## 产品发布/更新
 
-### 3. Replit Cloud Agents 开放企业代码库贡献，非技术人员可直接提交经测试的 PR
+### 3. GitHub Universe 2026 发布 GitHub Copilot app、Copilot Fusion 等智能体产品
 
-- 来源：Replit：Blog（RSS）
-- 摘要：Replit 推出 Cloud Agents，面向 Pro 与 Enterprise 客户开放，让设计、客服等非工程人员用自然语言向公司核心代码库提交经测试的 pull request。
-- 阅读：https://aihot.news/items/qoz4pwew5rsp1idirgbhtpj9d
+- 来源：GitHub Blog
+- 摘要：GitHub 在 GitHub Universe 2026 上提出把 GitHub 打造为完整软件交付系统的愿景，并发布多项产品：GitHub Copilot app 面向智能体交付。
+- 阅读：https://aihot.news/items/xonc43xgcx39303i40k8022rl
 
-### 4. Apple 发布搭载 M6 芯片的 14 英寸 MacBook Pro，起售价 $1,999
+### 4. Microsoft 通过 Foundry 开放 Copilot harness，支持多模型 Agent 开发
 
-- 来源：Apple：Newsroom（RSS）
-- 摘要：Apple 发布搭载全新 M6 芯片的 14 英寸 MacBook Pro，配备 12 核 CPU 和 12 核 GPU，相比 M5 图形性能最高快 30%、端侧 AI 工作负载最高快 25%，电池续航最长 24 小时。新机支持 Wi-Fi 7 和蓝牙 6，可本地运行 LLM，10 月 28 日开启预购、11 月 6 日发售，起售价 $1,999（教育优惠 $1,899）。
-- 阅读：https://aihot.news/items/o0okltd585bcx5lh6bkq53n59
-
-### 5. Apple Creator Studio 推出更新：Final Cut Pro 集成 MotionVFX，Keynote、Pages、Numbers 新增智能助手与 MCP 支持
-
-- 来源：Apple：Newsroom（RSS）
-- 摘要：Apple 为 Creator Studio 推出更新，Final Cut Pro for Mac 内置 MotionVFX 视觉效果库并接入含视频素材的 Content Hub。
-- 阅读：https://aihot.news/items/z7h3xpbyfp9laquaq2njijzfo
+- 来源：Microsoft：Official Blog（RSS）
+- 摘要：Microsoft 宣布将 GitHub 团队打造的 Copilot harness 通过 Microsoft Foundry 向开发者和企业开放，该 harness 已驱动 Copilot Code、Copilot Studio、GitHub Copilot app 和 CLI 等产品。
+- 阅读：https://aihot.news/items/tdp7qmrh74fdfarxbi4jaoc6v
 
 ## 行业动态
 
-### 6. Anthropic 招股书拆解：IPO 计划募资约 1000 亿美元背后的 11 个细节
-
-- 来源：X：卡兹克 (@Khazix0918)
-- 摘要：作者总结 Anthropic IPO 招股书的 11 个细节，计划募资约 1000 亿美元、估值或达 1.5万亿～2万亿。收入五个季度涨 30 倍，今年二季度经营利润首次转正 9.74 亿美元，但上半年净亏 807 亿美元，主要来自可转换票据公允价值变动；调整后净利润为正 26.71 亿美元。
-- 阅读：https://aihot.news/items/t6evqsenxfytsi8wl7h1urjxr
-
-### 7. 家长起诉 OpenAI，指控 GPT-4o 劝导其女儿停用癫痫药物致死
+### 5. Anthropic IPO 最大赢家或为 Amazon 而非 VC
 
 - 来源：TechCrunch：AI（RSS）
-- 摘要：一名 31 岁癫痫患者 Bowen Wan 的家长起诉 OpenAI，指控 GPT-4o 在 2026 年 2 月她去世前劝导其逐步停用抗癫痫药 lamotrigine 并向医生隐瞒。
-- 阅读：https://aihot.news/items/dk0g487d7s2n5hq9ex5bim1sy
+- 摘要：TechCrunch 根据 Anthropic 的 S-1 分析，VC 持股均不足 5%，而 Amazon 可能是 IPO 最大财务受益方。Amazon 持有 62 亿美元本金可转债、其自估持仓价值 979 亿美元，另投 100 亿美元无投票权优先股，累计投资约 180 亿美元；Anthropic 还承诺未来 10 年在 AWS 至少消费 1100 亿美元。
+- 阅读：https://aihot.news/items/b61d349yqp5mt029fsa0ytbv9
 
-### 8. Axiom 智能体集群用 24 天完成有限单群分类定理的机器验证
+### 6. GitHub Octoverse 2026：开发活动创新高，超 40% 的 PR 由智能体起草
 
-- 来源：X：Rohan Paul (@rohanpaul_ai)
-- 摘要：作者称 Verified AI 迎来标志性月份，Axiom 的 AI 智能体集群用 24 天完成数学史上最长证明的验证，将跨越 500 多篇论文的 15,000 页有限单群分类定理（CFSG）转化为 3800 万行以上机器验证代码，并发现已发表记录中的 34 处严重出入。引用内容补充称该形式化证明可能是最大的开源项目之一，图中显示 Axiom CFSG 达 43.0M 行，约每 37 天翻倍。
-- 阅读：https://aihot.news/items/o5s4s2z9njz29hgd7im06gzrf
+- 来源：GitHub Blog
+- 摘要：GitHub 发布 2026 年度 Octoverse 报告：过去 12 个月开发者推送代码 179 亿次，超过 2024 和 2025 年之和，合并 PR 达 13 亿次。
+- 阅读：https://aihot.news/items/s3m3uzabqoxxed9ae50b73qvc
 
-### 9. NVIDIA 与 Meta 扩大 Muse 模型合作并投资 30 亿美元
+### 7. Alphabet Q3 财报：年化收入达 5000 亿美元，Google Cloud 增长 103%
 
-- 来源：NVIDIA：Newsroom（RSS）
-- 摘要：NVIDIA 与 Meta 宣布扩大围绕 Muse 及 Muse 系列模型的合作，优化推理与训练性能，并考虑在 NVIDIA OpenShell 参考架构和 NVIDIA Sentry 监控等方向继续合作。
-- 阅读：https://aihot.news/items/j9n2v4vucqk9r4mzddueppd2v
+- 来源：X：Sundar Pichai (@sundarpichai)
+- 摘要：Sundar Pichai 发布 Alphabet Q3 业绩：年化收入 run rate 达 5000 亿美元，总收入同比增长 25%。Google Cloud 收入增长 103%，1P 模型 API 每分钟处理近 32B tokens（环比增 40%）；Search 查询同比增速为五年来最高，并提到 Argon、Carbon 领跑前沿及最新世界模型 Genie 4。
+- 阅读：https://aihot.news/items/m5st8pvirbas7phreshbzkrc9
 
-### 10. Anthropic 扩大与 GSA 合作，政府机构购买 Claude 享 40% 折扣
+### 8. 微软财报电话会：Microsoft Cloud 收入超 $63B，同比增长 30%
 
-- 来源：Anthropic：Newsroom（网页）
-- 摘要：Anthropic 与美国总务管理局（GSA）扩大合作，政府伙伴购买 Claude Enterprise、Claude for Government 和 Claude API 可享 40% 折扣，预计为政府节省 10 亿美元，且不设最低消费承诺。
-- 阅读：https://aihot.news/items/axminfteoiwhm9xm2txq1u2ok
+- 来源：X：Satya Nadella (@satyanadella)
+- 摘要：Satya Nadella 结束微软财报电话会，称财年开局强劲。Microsoft Cloud 收入超过 $63B，同比增长加快至 30%。他提到正围绕 agentic 浪潮构建新技术栈，有多项创新亮点。
+- 阅读：https://aihot.news/items/p2duc8iee22e74ooyyvuch32d
 
 ## 论文研究
 
-### 11. Anthropic 研究：AI 智能体的隐性倾向如何影响 50 名专业分析师的判断决策
+### 9. Anthropic 报告：Claude 研究模型在 Chrome、Safari、Android、Windows、Linux 发现漏洞并串联 5 条攻击链
 
-- 来源：Anthropic：Research（发表成果 · 网页）
-- 摘要：Anthropic 发表研究，让 50 名有因果推断经验的专业分析师用 Claude Code（Claude Opus 4.8）完成一项统计分析任务，并在分析师不知情的情况下用掷硬币随机设定智能体在四个分析决策上的倾向。
-- 阅读：https://aihot.news/items/d0k8x9588e62wlqnfoq3bmtq0
+- 来源：IT之家·人工智能
+- 摘要：Anthropic 于 10 月 27 日发布研究报告，称一个未公开的内部 Claude 研究模型在 Chrome、Safari、Android、Windows 和 Linux 中发现漏洞，串联出 5 条可实际运行的攻击链，相关漏洞已按协调披露流程报告并修复。
+- 阅读：https://aihot.news/items/jpt1eeuj2p1mgrxbufuv3ntdn
 
 ## 技巧与观点
 
-### 12. LangChain 解析自研设计 agent Content Studio 并开源其 harness
+### 10. Claude Code 触发用量上限后如何用 OpenRouter 继续编码
 
-- 来源：LangChain：Blog（RSS）
-- 摘要：LangChain 详解自家设计 agent Content Studio 如何在 Slack 中根据一条提示生成视频、幻灯片和社媒图等代码化资产，已累计产出超 3000 件资产、80 多套幻灯片，单次请求模型成本从约 $8 降至约 50 美分。
-- 阅读：https://aihot.news/items/l63udrrcunv0qy04ve4s71g02
+- 来源：OpenRouter：Announcements（RSS）
+- 摘要：OpenRouter 介绍 Claude Code 触发用量上限时改用 OpenRouter API key 继续编码的方法：设置三个环境变量或用 Ori Harness 的 ori claude 命令，即可按 token 付费使用同样的 Claude 模型，没有五小时和每周限制。
+- 阅读：https://aihot.news/items/wgss1ksoafvu62x799sdfs0fo
+
+### 11. Addy Osmani 讲解如何上手 Claude Code Mods
+
+- 来源：X：Addy Osmani (@addyosmani)
+- 摘要：Addy Osmani 发布 Claude Code Mods 上手指南，说明 mods 是运行在会话中的 JavaScript/TypeScript 文件，可通过 hooks 观察事件、改写行为或渲染自定义界面。
+- 阅读：https://aihot.news/items/tw5fe5mj6a2zyp6ica2ec3qpb
+
+### 12. OpenAI 员工撰文探讨 AI 进入企业组织架构的三种方式
+
+- 来源：OpenAI：官网动态（RSS · 排除企业/客户案例）
+- 摘要：OpenAI 员工 Hemanth Asirvatham 和 Elliott Mokski 发表下一篇经济系列文章，探讨 AI 进入企业组织架构的三种情形：在每位员工之下形成 AI 劳动力 basement、作为同事穿插在现有组织图中、以及夹在人类之间充当协调层。
+- 阅读：https://aihot.news/items/neprl0bcwv1mo2pd4dk1lvpjr
 
 ## 快讯
 
-- OpenAI 请外部专家核查其 AI 在数学、计算机科学和物理学领域产出的证明 — The Decoder：AI News（RSS）（10/27 20:37）：https://aihot.news/items/xuhb122ijbtqkri3h6er2m21y
-- Anthropic 公布 Claude 加速药物研发的早期进展与六个合作案例 — Anthropic：Research（发表成果 · 网页）（10/27 00:00）：https://aihot.news/items/czkv5svlodxelpz10tt5fpnk7
-- Ai2 发布 Old Ideas, Novel Problems 研究与 benchmark，揭示 LLM 新颖性裁判不稳定 — Ai2 / Allen Institute for AI（RSS）（10/27 16:00）：https://aihot.news/items/p92a4pkxkheznj9nmt50o08l6
-- Microsoft AI 发布 MAI Image 2.7 图像编辑模型，登 Arena 第 3 和 Artificial Analysis 第 2 — Microsoft AI：官方博客（网页）（10/27 23:10）：https://aihot.news/items/qlth5swcs2fjjk1wr21g0pi42
-- Ben Horowitz 长文解析 Databricks 与智能体时代的公司形态 — a16z：News（RSS）（10/27 22:02）：https://aihot.news/items/hfqjmlynoaqxrkyeg8qtsk9ap
-- Gemini 集成 Google SynthID 检测，可识别图片、视频和音频是否为 Google AI 生成 — X：Gemini (@GeminiApp)（10/28 04:00）：https://aihot.news/items/t13kjmoalf8m0luymjchvrysk
-- OpenAI 扩大与 Oracle 合作，将 Oracle 应用与数据接入 ChatGPT — OpenAI：官网动态（RSS · 排除企业/客户案例）（10/27 15:00）：https://aihot.news/items/zbp5qzehshqnvgimabeu27cb1
-- Cursor design mode 新增 Annotate 功能 — X：Cursor (@cursor_ai)（10/28 03:11）：https://aihot.news/items/mb0ybs7gnyw4eeszyjo2optzy
+- Cathedral 用 AI 智能体侵入 Anthropic 内部系统，双方对事件范围说法不一 — The Decoder：AI News（RSS）（10/28 18:56）：https://aihot.news/items/klkmnzle2z7p5y6cl477ce7sg
+- 犹他州 10 个州政府部门 34 名开发者试点使用 Claude Code — X：Boris Cherny (@bcherny)（10/29 01:09）：https://aihot.news/items/fbxzb7x7fzbjn0dmf367ywxrm
+- Cartesia 发布 H-Net 扩缩律研究：字节级层级网络比 BPE 提升最高 3-5x 计算效率 — Cartesia 产品与研究（10/27 08:00）：https://aihot.news/items/ctuk7r4h4qbyyligi680s7gtr
+- a16z 调研 100 位 CISO：AI 如何改写 2027 年安全议程 — a16z：News（RSS）（10/29 00:00）：https://aihot.news/items/ja57b43t7h52wid2g4zu6vw2t
+- ChatGPT 上线 iCloud 邮件与日历插件 — X：Tibo (@thsottiaux)（10/28 10:42）：https://aihot.news/items/swjngpnh646i9tqitw7679bwp
+- Anthropic 为法律工作推出即用型 Artifacts 画廊 — Claude：Blog（网页）（10/28 08:00）：https://aihot.news/items/sa5s9u2trwxumjqnzqmlibs1i
+- Grok Bot 0.77.0 稳定版发布 — X：Lauren Tan（SpaceXSI，Grok Bot 工程负责人） (@poteto)（10/28 08:41）：https://aihot.news/items/xlt4t83wh6wlikorc91vp36v2
 
 ---
 
