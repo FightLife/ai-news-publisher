@@ -1,104 +1,106 @@
-# AI HOT 日报 - 2026年10月29日星期四
+# AI HOT 日报 - 2026年10月30日星期五
 
 > 数据来自 AI HOT（https://aihot.virxact.com），链接优先指向站内中文阅读页。
 
 ## 今日主线
 
-**Google DeepMind 发布 Gemini 4 Carbon 前沿模型**
+**Mistral Large 4（Le Chonk）登陆 Hugging Face：1T 参数 MoE 多模态开源权重模型**
 
-Google DeepMind 发布 Gemini 4 Carbon，定位为最强前沿模型，主打网络安全与长程智能体能力，在 SEC-bench Pro 88.2%、ExploitGym 54.8%、CWE-bench 71.0% 取得领先，并以 59 分登顶 Artificial Analysis Intelligence Index v5.0。
+Hugging Face 发布 Mistral Large 4（Le Chonk）的上线博客，模型为多模态多语言 MoE 架构，总参数约 1T、激活 49B、上下文窗口 1M token。
 
 ## 模型发布/更新
 
-### 1. Google DeepMind 发布 Gemini 4 Carbon 前沿模型
+### 1. Mistral Large 4（Le Chonk）登陆 Hugging Face：1T 参数 MoE 多模态开源权重模型
 
-- 来源：Google DeepMind：Blog（RSS）
-- 摘要：Google DeepMind 发布 Gemini 4 Carbon，定位为最强前沿模型，主打网络安全与长程智能体能力，在 SEC-bench Pro 88.2%、ExploitGym 54.8%、CWE-bench 71.0% 取得领先，并以 59 分登顶 Artificial Analysis Intelligence Index v5.0。
-- 阅读：https://aihot.news/items/fjeloaahylonpc0pv5tduusud
+- 来源：Hugging Face 官方团队博客
+- 摘要：Hugging Face 发布 Mistral Large 4（Le Chonk）的上线博客，模型为多模态多语言 MoE 架构，总参数约 1T、激活 49B、上下文窗口 1M token。
+- 阅读：https://aihot.news/items/upsd8u37hkkquohy3w3sjvszi
 
-### 2. 面壁智能发布并开源 MiniCPM-OCR 系列：1.3B 解析模型与 2B 判别模型
+### 2. Pika 基于MiniMax H3后训练并开源 Pika H3 Flex 视频生成模型
 
-- 来源：公众号：面壁智能（MiniCPM）
-- 摘要：面壁智能发布并开源 MiniCPM-OCR 系列。MiniCPM-OCR 1.0（1.3B）在 Real5-OmniDocBench 取得 93.68 分、OCRBench v2 取得 54.7 分的 SOTA，经 DSpark 加速后吞吐达 1.217 页/秒，端到端效率提升 55%。
-- 阅读：https://aihot.news/items/zd8g1y3609zl72lnwis70owqt
+- 来源：X：卡兹克 (@Khazix0918)
+- 摘要：Pika Labs 在 MiniMax H3 上做后训练，推出并开源 Pika H3 Flex，采样步数从 50 步压缩到 6 步，生成时间大幅降低且质量有所提升。
+- 阅读：https://aihot.news/items/eq47lph0rzobf8cr950saiu8r
 
 ## 产品发布/更新
 
-### 3. GitHub Universe 2026 发布 GitHub Copilot app、Copilot Fusion 等智能体产品
+### 3. Codex 宣布即日起 Pro 及 Business Premium 各档位用量上限翻倍
 
-- 来源：GitHub Blog
-- 摘要：GitHub 在 GitHub Universe 2026 上提出把 GitHub 打造为完整软件交付系统的愿景，并发布多项产品：GitHub Copilot app 面向智能体交付。
-- 阅读：https://aihot.news/items/xonc43xgcx39303i40k8022rl
+- 来源：X：Tibo (@thsottiaux)
+- 摘要：Tibo 宣布即日起将 Pro 100/200/500 档位与 Business Premium 的所有用量上限翻倍。Pro 200 的上限不会下调，Work 与 Codex 用量保持不变；dots 的扩展用量上限继续提供，且仍与默认用量分开计算，后续还会通过更好的模型和效率改进提升实际可用量。
+- 阅读：https://aihot.news/items/funx6p4g0gju509j6n0oyxmqu
 
-### 4. Microsoft 通过 Foundry 开放 Copilot harness，支持多模型 Agent 开发
+### 4. Factory 发布 Droid 1.0，以程序化工具调用构建企业级 Agent harness
 
-- 来源：Microsoft：Official Blog（RSS）
-- 摘要：Microsoft 宣布将 GitHub 团队打造的 Copilot harness 通过 Microsoft Foundry 向开发者和企业开放，该 harness 已驱动 Copilot Code、Copilot Studio、GitHub Copilot app 和 CLI 等产品。
-- 阅读：https://aihot.news/items/tdp7qmrh74fdfarxbi4jaoc6v
+- 来源：Factory 研究 / 产品（RSS）
+- 摘要：Factory 发布 Droid 1.0，一个模型无关的 agent harness，主打程序化工具调用（PTC），模型通过编写 JavaScript 程序在沙箱中一次执行数百个工具调用。
+- 阅读：https://aihot.news/items/gjz7lj8j6ojjyj80vkkhy786v
+
+### 5. OpenRouter 重建默认路由算法：TTFT 降 16.9%、429 错误减少 67%
+
+- 来源：OpenRouter：Announcements（RSS）
+- 摘要：OpenRouter 宣布重建默认 provider 路由算法，从只按价格排序改为按 Routing Cost 综合 effective price、TTFT、吞吐、错误率和输出质量选路。
+- 阅读：https://aihot.news/items/l4znfnzfs6rz6vorl1wyj90gb
 
 ## 行业动态
 
-### 5. Anthropic IPO 最大赢家或为 Amazon 而非 VC
+### 6. 纽约时报称中国情报人员瞄准英伟达 CEO 黄仁勋
+
+- 来源：The Decoder：AI News（RSS）
+- 摘要：据《纽约时报》报道，美国情报机构认为英伟达 CEO 黄仁勋身边一名高管为中国提供情报，此人是新加坡数据中心运营商 Megaspeed 的 Alice Huang（黄乐）。
+- 阅读：https://aihot.news/items/lq97h52ctxw2nkri4qqxj5lbx
+
+### 7. Reddit 宣布转向以登录为主的体验，以应对 AI 搜索带来的流量下滑
 
 - 来源：TechCrunch：AI（RSS）
-- 摘要：TechCrunch 根据 Anthropic 的 S-1 分析，VC 持股均不足 5%，而 Amazon 可能是 IPO 最大财务受益方。Amazon 持有 62 亿美元本金可转债、其自估持仓价值 979 亿美元，另投 100 亿美元无投票权优先股，累计投资约 180 亿美元；Anthropic 还承诺未来 10 年在 AWS 至少消费 1100 亿美元。
-- 阅读：https://aihot.news/items/b61d349yqp5mt029fsa0ytbv9
+- 摘要：Reddit 在 Q3 财报中宣布将转向以登录为主的体验，以保护数据免受 AI 抓取并提升广告变现。10 月搜索流量平均每周减少超 100 万次引荐，Q3 全球日活为 1.303 亿，其中美国日活降至 5070 万，同比降 2%。Q3 收入同比增长 53% 至 8.95 亿美元，净利润 2.83 亿美元；该转变将先在美国以外市场测试，暂无全球上线时间表。
+- 阅读：https://aihot.news/items/op2kjf327vilvhbxkjicxg5ec
 
-### 6. GitHub Octoverse 2026：开发活动创新高，超 40% 的 PR 由智能体起草
+### 8. Google 三季度搜索增速不及预期，投资者担忧 AI 搜索变现拖累核心业务
 
-- 来源：GitHub Blog
-- 摘要：GitHub 发布 2026 年度 Octoverse 报告：过去 12 个月开发者推送代码 179 亿次，超过 2024 和 2025 年之和，合并 PR 达 13 亿次。
-- 阅读：https://aihot.news/items/s3m3uzabqoxxed9ae50b73qvc
+- 来源：The Decoder：AI News（RSS）
+- 摘要：Google 三季度搜索收入增长约 12%，低于分析师预期的 15%，市值一度缩水最多 10%。高管 Philipp Schindler 承认 AI mode 查询的强劲增长因变现率较低产生了影响，同时公司称搜索查询年增速达五年来最高，并计划在美国及国际市场扩大聊天机器人广告项目。
+- 阅读：https://aihot.news/items/wry19y87ktlbmfwu581jjffj7
 
-### 7. Alphabet Q3 财报：年化收入达 5000 亿美元，Google Cloud 增长 103%
+### 9. 404 Media 起底 Proton 内部 AI 转型之争：CEO Andy Yen 强推 AI 引发恐惧文化
 
-- 来源：X：Sundar Pichai (@sundarpichai)
-- 摘要：Sundar Pichai 发布 Alphabet Q3 业绩：年化收入 run rate 达 5000 亿美元，总收入同比增长 25%。Google Cloud 收入增长 103%，1P 模型 API 每分钟处理近 32B tokens（环比增 40%）；Search 查询同比增速为五年来最高，并提到 Argon、Carbon 领跑前沿及最新世界模型 Genie 4。
-- 阅读：https://aihot.news/items/m5st8pvirbas7phreshbzkrc9
-
-### 8. 微软财报电话会：Microsoft Cloud 收入超 $63B，同比增长 30%
-
-- 来源：X：Satya Nadella (@satyanadella)
-- 摘要：Satya Nadella 结束微软财报电话会，称财年开局强劲。Microsoft Cloud 收入超过 $63B，同比增长加快至 30%。他提到正围绕 agentic 浪潮构建新技术栈，有多项创新亮点。
-- 阅读：https://aihot.news/items/p2duc8iee22e74ooyyvuch32d
+- 来源：404 Media（RSS）
+- 摘要：404 Media 采访九名现任与离职 Proton 员工并查阅内部文件，报道 CEO Andy Yen 强推 AI 转型引发的内部冲突。10 月公司 90% 代码由 AI 编写，多使用 Anthropic 的 Claude；Yen 称今年是最后一年招聘工程师，并宣布将以可能决定去留的重新面试评估员工 AI 使用情况。
+- 阅读：https://aihot.news/items/x7qd347blfo2409za7srbypzw
 
 ## 论文研究
 
-### 9. Anthropic 报告：Claude 研究模型在 Chrome、Safari、Android、Windows、Linux 发现漏洞并串联 5 条攻击链
+### 10. OpenAI 详解如何检测前沿模型失准行为
 
-- 来源：IT之家·人工智能
-- 摘要：Anthropic 于 10 月 27 日发布研究报告，称一个未公开的内部 Claude 研究模型在 Chrome、Safari、Android、Windows 和 Linux 中发现漏洞，串联出 5 条可实际运行的攻击链，相关漏洞已按协调披露流程报告并修复。
-- 阅读：https://aihot.news/items/jpt1eeuj2p1mgrxbufuv3ntdn
+- 来源：OpenAI：官网动态（RSS · 排除企业/客户案例）
+- 摘要：OpenAI 发布长文，详解其针对前沿模型失准行为的多层监测系统，包括激活探针、基于模型的审查、调查智能体和自动化调查四层架构，并对 GPT‑6 Astra 及以上模型的全部 RL 运行、评估和内部 Codex 流量进行监测。
+- 阅读：https://aihot.news/items/ck2bk0ns12i2hkg4ae0eoeabv
+
+### 11. Trakkr 研究：追踪 1285 条 AI 引用统计的溯源路径
+
+- 来源：Hacker News：AI 热帖
+- 摘要：Trakkr Research 向 ChatGPT、Perplexity、Gemini、Claude 和 Google AI Overviews 提出 200 个要求数字的问题，并追踪其中 1285 条统计的引用链路，结果只有 40% 到达说法一致的研究，8% 到达但数字或语境已变，40% 无法核查，11% 无处可溯。
+- 阅读：https://aihot.news/items/dmi67weoeety92021tvuyf1hs
 
 ## 技巧与观点
 
-### 10. Claude Code 触发用量上限后如何用 OpenRouter 继续编码
+### 12. OpenRouter 教程：用 LLM 从 PDF 中抽取表格
 
 - 来源：OpenRouter：Announcements（RSS）
-- 摘要：OpenRouter 介绍 Claude Code 触发用量上限时改用 OpenRouter API key 继续编码的方法：设置三个环境变量或用 Ori Harness 的 ori claude 命令，即可按 token 付费使用同样的 Claude 模型，没有五小时和每周限制。
-- 阅读：https://aihot.news/items/wgss1ksoafvu62x799sdfs0fo
-
-### 11. Addy Osmani 讲解如何上手 Claude Code Mods
-
-- 来源：X：Addy Osmani (@addyosmani)
-- 摘要：Addy Osmani 发布 Claude Code Mods 上手指南，说明 mods 是运行在会话中的 JavaScript/TypeScript 文件，可通过 hooks 观察事件、改写行为或渲染自定义界面。
-- 阅读：https://aihot.news/items/tw5fe5mj6a2zyp6ica2ec3qpb
-
-### 12. OpenAI 员工撰文探讨 AI 进入企业组织架构的三种方式
-
-- 来源：OpenAI：官网动态（RSS · 排除企业/客户案例）
-- 摘要：OpenAI 员工 Hemanth Asirvatham 和 Elliott Mokski 发表下一篇经济系列文章，探讨 AI 进入企业组织架构的三种情形：在每位员工之下形成 AI 劳动力 basement、作为同事穿插在现有组织图中、以及夹在人类之间充当协调层。
-- 阅读：https://aihot.news/items/neprl0bcwv1mo2pd4dk1lvpjr
+- 摘要：OpenRouter 发布教程，讲解如何把 PDF 以文件形式连同严格 JSON schema 发给能读文件的模型，让表格以带类型的行返回，括号亏损、千分位和脚注标记等清理都写进字段描述。
+- 阅读：https://aihot.news/items/l928e49lwysm0ymgmhyjrkc3z
 
 ## 快讯
 
-- Cathedral 用 AI 智能体侵入 Anthropic 内部系统，双方对事件范围说法不一 — The Decoder：AI News（RSS）（10/28 18:56）：https://aihot.news/items/klkmnzle2z7p5y6cl477ce7sg
-- 犹他州 10 个州政府部门 34 名开发者试点使用 Claude Code — X：Boris Cherny (@bcherny)（10/29 01:09）：https://aihot.news/items/fbxzb7x7fzbjn0dmf367ywxrm
-- Cartesia 发布 H-Net 扩缩律研究：字节级层级网络比 BPE 提升最高 3-5x 计算效率 — Cartesia 产品与研究（10/27 08:00）：https://aihot.news/items/ctuk7r4h4qbyyligi680s7gtr
-- a16z 调研 100 位 CISO：AI 如何改写 2027 年安全议程 — a16z：News（RSS）（10/29 00:00）：https://aihot.news/items/ja57b43t7h52wid2g4zu6vw2t
-- ChatGPT 上线 iCloud 邮件与日历插件 — X：Tibo (@thsottiaux)（10/28 10:42）：https://aihot.news/items/swjngpnh646i9tqitw7679bwp
-- Anthropic 为法律工作推出即用型 Artifacts 画廊 — Claude：Blog（网页）（10/28 08:00）：https://aihot.news/items/sa5s9u2trwxumjqnzqmlibs1i
-- Grok Bot 0.77.0 稳定版发布 — X：Lauren Tan（SpaceXSI，Grok Bot 工程负责人） (@poteto)（10/28 08:41）：https://aihot.news/items/xlt4t83wh6wlikorc91vp36v2
+- The Verge 解读 Anthropic S-1：约 8500 亿美元 compute 承诺押注递归自我改进 — The Verge：AI（RSS）（10/29 21:30）：https://aihot.news/items/iuma7p8unle567lzy6hp5jpw9
+- OpenAI 更新 Model Spec，围绕五项核心价值观重组模型行为准则 — OpenAI：官网动态（RSS · 排除企业/客户案例）（10/30 01:00）：https://aihot.news/items/rccreyesa3aeph7jasj5spv29
+- OpenMOSS 发布开源图像生成模型 MOSS-Image，主打长文本渲染与可编辑布局 — OpenMOSS / 复旦NLP / 上海创智 / MOSI（网页）（10/29 00:00）：https://aihot.news/items/wykbrcxndw1zv255b9y2usj7v
+- Addy Osmani 谈你可能对 Claude 过度提示了 — X：Addy Osmani (@addyosmani)（10/29 14:13）：https://aihot.news/items/m1cx9dfhpep0da323x3tk7vht
+- Wiz 分析智能体攻击的七大指纹与发展趋势 — Wiz：Research（安全研究）（10/29 22:36）：https://aihot.news/items/mdcygre4ettjdbca7sq6vu7zx
+- Gemini 新增文档、PDF、演示文稿和表格的直接生成、预览与编辑功能 — X：Gemini (@GeminiApp)（10/30 00:36）：https://aihot.news/items/nfbnpnzdrebu4kbq6uqxhkc2h
+- 腾讯混元发布 Hy-Nomas 技术报告并开源 Hy-Nomas-Bench — X：腾讯混元 (@TencentHunyuan)（10/30 01:00）：https://aihot.news/items/nb40aoihhydhoo0acp0rcyaol
+- Figma 讲解如何训练专用画布编辑模型 — Figma AI / Agent / Make（10/30 05:00）：https://aihot.news/items/z9kqlhsgiz11fvlk3aodm6seg
+- Claude Enterprise 正式上线智能报告、应用内调研与团队共享预算 — Claude：Blog（网页）（10/28 08:00）：https://aihot.news/items/q6ciwdz3he2pldxqcjzw2mno4
 
 ---
 
